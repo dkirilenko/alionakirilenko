@@ -299,9 +299,6 @@ section.active .menu {
     padding: 20px 40px;
   }
 
-  section::before {
-    opacity: 0.1;
-  }
   .main-image {
     right: 0px;
     opacity: 0.3;
