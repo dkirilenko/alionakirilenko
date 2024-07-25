@@ -300,7 +300,7 @@ section.active .menu {
   }
 
   section::before {
-    opacity: 0;
+    opacity: 0.1;
   }
   .main-image {
     right: 0px;
