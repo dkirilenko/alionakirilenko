@@ -34,7 +34,7 @@ section:before {
   position: absolute;
   top: 65%;
   right: 100px;
-  /* transform: translateY(-50%); */
+  transform: translateY(-50%);
   background-image: url("../images/lamp.png");
   background-size: 500px;
   background-repeat: no-repeat;
