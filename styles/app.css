@@ -34,7 +34,7 @@ section:before {
   position: absolute;
   top: 65%;
   right: 100px;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   background-image: url("../images/lamp.png");
   background-size: 500px;
   background-repeat: no-repeat;
@@ -187,11 +187,6 @@ header .toggle.active .fa-xmark {
   font-size: 2em;
   line-height: 1.5em;
 }
-#content .contentBx p {
-  font-weight: 300;
-  font-size: 1em;
-  margin: 10px 0 20px;
-}
 
 #content .contentBx a {
   display: inline-block;
@@ -212,6 +207,14 @@ header .toggle.active .fa-xmark {
 
 #content .contentBx a:hover {
   box-shadow: 0 0 15px var(--secondary-color), 0 0 40px var(--secondary-color), 0 0 40px var(--secondary-color) inset;
+}
+
+#content #quotation {
+  font-style: italic;
+  font-family: none;
+  font-weight: 300;
+  font-size: 1em;
+  margin: 10px 0 20px;
 }
 
 .sci {
