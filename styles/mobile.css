@@ -1,0 +1,52 @@
+@media (max-width: 991px) {
+  section:before {
+    max-width: none;
+    background-size: auto 95%;
+    background-position: center bottom;
+    background-color: rgb(98,64,44);
+    background-image: linear-gradient(90deg, rgba(98,64,44,1), rgba(41,31,20,1) 40%);
+    right: 0;
+    /* min-height: 100%; */
+    /* background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 90%;*/
+  }
+
+  .logo_image {
+    filter: invert(100%);
+  }
+
+  header {
+    padding: 20px 40px;
+  }
+
+  .main-image {
+    right: 0px;
+    opacity: 0.3;
+  }
+
+  #content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #content .contentBx a {
+    margin-bottom: 10px;
+    padding: 6px 12px;
+  }
+  
+  #content .contentBx h2 {
+    font-size: 2.2em;
+    /* text-shadow: 1px 0px 5px rgba(239, 237, 227, 0.7), -1px 0px 2px rgba(239, 237, 227, 0.7); */
+    /* text-shadow: 0.1px 0px 2px rgba(239, 237, 227, 0.7), -0.1px 0px 1px rgba(239, 237, 227, 0.7); */
+  }
+  
+  #content .contentBx h3 {
+    font-size: 1.5em;
+  }
+
+  .menu {
+    padding-left: 0;
+    align-items: center;
+  }
+}
