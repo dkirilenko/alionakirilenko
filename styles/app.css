@@ -153,6 +153,7 @@ header .logo span {
 #phone-number {
   display: flex;
   justify-content: end;
+  text-decoration: none;
   gap: 8px;
 }
 
