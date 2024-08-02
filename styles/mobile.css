@@ -1,23 +1,57 @@
 @media (max-width: 991px) {
-  section:before {
-    max-width: none;
-    background-size: auto 95%;
-    background-position: center bottom;
-    background-color: rgb(98,64,44);
-    background-image: linear-gradient(90deg, rgba(98,64,44,1), rgba(41,31,20,1) 40%);
-    right: 0;
-    /* min-height: 100%; */
-    /* background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: auto 90%;*/
+  * {
+    color: var(--secondary-color);
   }
 
-  .logo_image {
+  .for-laptop {
+    display: none;
+  }
+
+  .for-mobile {
+    display: flex;
+  }
+
+  section {
+    /* padding: 16px; */
+    /* min-height: 100%; */
+    
+
+    background-color: rgb(98,64,44);
+    background-image: linear-gradient(90deg, rgba(98,64,44,1), rgba(41,31,20,1) 40%);
+  }
+
+  section:before {
+    content: '';
+    /* max-width: none;
+    background-size: auto 95%;
+    background-position: center bottom; */
+
+    background-repeat: no-repeat;
+    background-position: right -15px bottom;
+    background-size: auto 60%;
+    background-image: url("../images/main-image.png");
+    
+    position: absolute;
+    
+    height: 100%;
+    width: 100%;
+  }
+
+  #content {
+    padding: 16px;
+    text-align: left;
+  }
+
+  .contentBx {
+    width: 100%;
+  }
+
+  .logo_image img {
     filter: invert(100%);
   }
 
   header {
-    padding: 20px 40px;
+    padding: 20px 20px;
   }
 
   .main-image {
@@ -26,8 +60,9 @@
   }
 
   #content {
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    align-items: start;
+    padding-top: 110px;
   }
 
   #content .contentBx a {
@@ -37,16 +72,26 @@
   
   #content .contentBx h2 {
     font-size: 2.2em;
+    max-width: 300px;
     /* text-shadow: 1px 0px 5px rgba(239, 237, 227, 0.7), -1px 0px 2px rgba(239, 237, 227, 0.7); */
     /* text-shadow: 0.1px 0px 2px rgba(239, 237, 227, 0.7), -0.1px 0px 1px rgba(239, 237, 227, 0.7); */
   }
   
   #content .contentBx h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin-top: 70px;
+    max-width: 200px;
   }
 
   .menu {
     padding-left: 0;
     align-items: center;
+  }
+
+  #consultation-btn {
+    position: absolute;
+    bottom: 30px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color)
   }
 }

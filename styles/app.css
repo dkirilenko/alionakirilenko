@@ -3,7 +3,7 @@
 
 :root {
   --primary-color: rgb(105, 79, 63);
-  --secondary-color: #rgb(240, 237, 227);
+  --secondary-color: rgb(240, 237, 227);
   --font-color: var(--primary-color)
 }
 
@@ -203,15 +203,14 @@ header .toggle.active .fa-xmark {
   transform-origin: left;
   overflow: hidden;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-
+  margin: 0 auto;
 }
+
 #content .contentBx {
   /* margin-left: auto; */
   /* margin-right: 30px; */
   max-width: 700px;
-  padding: 15px 15px;
+  padding: 16px 16px;
   z-index: 100;
 }
 
@@ -234,7 +233,7 @@ header .toggle.active .fa-xmark {
   margin: 2rem 0 4rem 0;
 }
 
-#content .contentBx .btn {
+.btn {
   display: inline-block;
   padding: 10px 10px;
   font-weight: 500;
@@ -247,6 +246,7 @@ header .toggle.active .fa-xmark {
   overflow: hidden;
   width: 265px;
   border-radius: 4px;
+  text-align: center;
 }
 
 #content .contentBx a:last-child {
@@ -355,4 +355,12 @@ section.active .menu {
 
 .flex {
   display: flex;
+}
+
+.for-mobile {
+  display: none;
+}
+
+.text-right {
+  text-align: right;
 }
