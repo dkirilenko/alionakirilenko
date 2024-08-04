@@ -4,25 +4,45 @@
     <link rel="stylesheet" href="styles/mobile.css" />
     <script src="https://kit.fontawesome.com/ee8d3174b1.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
   </head>
   <body>
-    <header>
+    <!-- Tmp hook for mobile -->
+    <header class="for-mobile">
       <div class="flex logo_image">
-        <img src="images/logo.png"/>
+        <img class="invert" src="images/logo.png"/>
         <div id="phone-number">
           <i class="fa-solid fa-phone"></i>
           097-244-244-5
         </div>
       </div>
+    </header>
 
-      <!-- <div class="toggle">
-        <i class="fa-solid fa-bars"></i>
+    <header>
+      <ul class="width-55">
+        <li>
+          <div class="flex logo_image">
+            <img src="images/logo.png"/>
+            <div id="phone-number">
+              <i class="fa-solid fa-phone"></i>
+              097-244-244-5
+            </div>
+          </div>
+        </li>
+
+        <li class="ml-auto"><a href="/" class="active">Головна</a></li>
+        <li><a href="/education.html">Освіта</a></li>
+        <li><a href="#">Запити</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+      <div class="toggle for-mobile">
+        <i class="fa-solid fa-bars secondary-color"></i>
         <i class="fa-solid fa-xmark"></i>
-      </div> -->
+      </div>
     </header>
 
     <section id="container" class="for-laptop">  
-      <div id="content">
+      <div id="content" class="width-55">
         <div class="contentBx">
           <!-- <h4>Привіт,</h4> -->
           <h2>Кириленко Альона</h4>
@@ -52,7 +72,7 @@
       </ul> -->
     </section>
 
-    <section id="container" class="for-mobile">  
+    <section id="container" class="for-mobile index-page">  
       <div id="content">
         <div class="contentBx">
           <!-- <h4>Привіт,</h4> -->
@@ -71,11 +91,11 @@
     </section>
 
     <script>
-      const container = document.getElementById('container');
+      const body = document.getElementsByTagName('body')[0];
       const toggle = document.querySelector('.toggle');
 
       toggle.addEventListener('click', () => {
-        container.classList.toggle('active')
+        body.classList.toggle('show-nav-bar')
         toggle.classList.toggle('active')
       })
     </script>

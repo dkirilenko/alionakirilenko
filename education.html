@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="styles/mobile.css" />
+    <link rel="stylesheet" href="styles/education.css" />
+    <script src="https://kit.fontawesome.com/ee8d3174b1.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body>
+    <header class="for-mobile">
+      <div class="flex logo_image">
+        <img src="images/logo.png"/>
+        <div id="phone-number" class="primary-color">
+          <i class="fa-solid fa-phone primary-color"></i>
+          097-244-244-5
+        </div>
+      </div>
+    </header>
+
+    <header>
+      <ul>
+        <li>
+          <div class="flex logo_image">
+            <img src="images/logo.png"/>
+            <div id="phone-number">
+              <i class="fa-solid fa-phone"></i>
+              097-244-244-5
+            </div>
+          </div>
+        </li>
+
+        <li class="ml-auto"><a href="/">Головна</a></li>
+        <li><a class="active" href="/education.html">Освіта</a></li>
+        <li><a href="#">Запити</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+      <div class="toggle for-mobile">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </header>
+
+    <section>
+      <div id="education-page">
+        <div class="education-content">
+          <div class="btn">Освіта</div>
+          <div class="education-item">Випускниця Міжнародного Інституту Глибинної Психології (Київ, Україна)</div>
+          <div class="education-item">Студентка другого курсу магістратури університету Кот-дʼАзюр (Ніцца, Франція)</div>
+          <div class="education-item">Член Української Асоціації Психоаналізу</div>
+          <div class="education-item">Член міжнародної асоціації La Cause des bébés</div>
+          <div class="education-item">Учасниця проекту “ДІЯ СЛОВА”, який створений Міжнародним інститутом глибинної психології спільно з Міжнародною Федерацією Психоаналізу та Українською Асоціацією Психоаналізу.
+            (https://migp.pa.org.ua/ua/novosti-proekt-dejstvie-slova)</div>
+          <div class="education-item">Проходжу тренінговий аналіз (особиста терапія) у сертифікованого спеціаліста та тренінгового психоаналітика УАП-ЄКПП Україна (більше 300 годин, який триває)</div>
+        </div>
+        <div class="education-content">
+          <div class="btn">Спеціалізації</div>
+          <div>
+            <div class="education-item">Спеціалізація з клінічного психоаналізу “Психоаналітична робота з не-невротичними пацієнтами” (128 годин)</div>
+            <div class="education-item">Клінічна спеціалізація «Психоаналітичні стратегії в психотерапії дітей ті підлітків. Психічні наслідки війни для юного суб'єкту» (128 годин)</div>
+            <div class="education-item">Курс “Організація психоаналітичної практики в сучасних умовах” (20 годин)</div>
+            <div class="education-item">Курс “Терапія партнера нарцисичного перверта” (10 годин)</div>
+            <div class="education-item">Клінічний семінар “Демони печалі: меланхолія та депресія як психічні розлади і феномени. Психоаналітичний погляд” (8 годин)</div>
+            <div class="education-item">Міжнародна психоаналітична конференція “Неосексуальність: норма і патологія”</div>
+            <div class="education-item">Всеукраїнський клінічно-практичний симпозіум “Виклики псиспеціалістам в процесі роботи з онкохворими” (12 годин)</div>
+            <div class="education-item">Семінар-практикум “Перенесення: пристрасть і ненависть в аналітичному просторі”</div>
+            <div class="education-item">Практично-теоретичний семінар: “Інша реальність. Психотична структура і можливості психоаналізу” (10 годин)</div>
+
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const body = document.getElementsByTagName('body')[0];
+      const toggle = document.querySelector('.toggle');
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('show-nav-bar')
+        toggle.classList.toggle('active')
+      })
+    </script>
+  </body>
+</html>

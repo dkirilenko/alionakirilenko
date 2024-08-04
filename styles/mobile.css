@@ -14,11 +14,15 @@
   section {
     height: 100dvh;
     width: 100dvw;
+    background-color: var(--secondary-color);
+  }
+
+  section.index-page {
     background-color: rgb(98,64,44);
     background-image: linear-gradient(90deg, rgba(98,64,44,1), rgba(41,31,20,1) 40%);
   }
 
-  section:before {
+  section.index-page:before {
     content: '';
     /* max-width: none;
     background-size: auto 95%;
@@ -44,12 +48,55 @@
     width: 100%;
   }
 
-  .logo_image img {
+  .invert {
     filter: invert(100%);
   }
 
   header {
     padding: 20px 20px;
+  }
+
+  header ul {
+    width: 100% !important;
+    height: 100vh;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  header ul li { margin: 0 !important; }
+
+  header ul li:first-child {
+    display: none;
+  }
+  
+  header ul li a, header ul li a.active {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 0;
+  }
+  
+  header .toggle {
+    position: absolute;
+    right: 24px;
+    top: 24px
+  }
+
+  header .toggle i { color: var(--primary-color); }
+
+  body.show-nav-bar header ul {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  body.show-nav-bar header ul:before {
+    box-shadow: 0 0 0 1200px var(--secondary-color);
+    position: absolute;
+    content: '';
+    z-index: -1;
+    opacity: 0.7;
   }
 
   .main-image {
@@ -91,5 +138,16 @@
     bottom: 30px;
     background-color: var(--secondary-color);
     color: var(--primary-color)
+  }
+  
+  #education-page {
+    flex-direction: column;
+    padding-top: 140px;
+    overflow: auto !important;
+  }
+
+  .education-content{
+    width: 100% !important;
+    padding-top: 0 !important;
   }
 }

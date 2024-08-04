@@ -4,7 +4,8 @@
 :root {
   --primary-color: rgb(105, 79, 63);
   --secondary-color: rgb(240, 237, 227);
-  --font-color: var(--primary-color)
+  --font-color: var(--primary-color);
+  --border-radius: 4px;
 }
 
 * {
@@ -18,7 +19,6 @@
 body {
   overflow: hidden;
 }
-
 
 section {
   height: 100vh;
@@ -43,13 +43,13 @@ section {
   right: 0;
 } */
 
-section.active:after {
+/* section.active:after {
   background-color: #21283a;
   box-shadow: 0 0 0 1200px #21283a;
   position: absolute;
   content: '';
   opacity: 0.9;
-}
+} */
 
 /* section:before {
   position: absolute;
@@ -107,9 +107,10 @@ section:after {
   box-shadow: 0 0 0 1200px #21283a;
 } */
 
-section.active header .logo,
-section.active #content,
-section.active .sci {
+body.show-nav-bar section header .logo,
+body.show-nav-bar section #content,
+body.show-nav-bar section #education-page,
+body.show-nav-bar section .sci {
   transform: scale(0);
 }
 
@@ -136,6 +137,34 @@ header .logo {
   transform-origin: left;
 }
 
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+header ul li {
+  padding: 8px;
+}
+
+header ul li a {
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+}
+
+header ul li a.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+header ul li a:hover {
+  border: 1px solid var(--primary-color);
+}
+
 header .logo_image {
   flex-direction: column;
   gap: 8px;
@@ -153,7 +182,6 @@ header .logo span {
 #phone-number {
   display: flex;
   justify-content: end;
-  text-decoration: none;
   gap: 8px;
 }
 
@@ -196,7 +224,6 @@ header .toggle.active .fa-xmark {
 #content {
   position: relative;
   display: flex;
-  width: 55%;
   justify-content: center;
   align-items: center;
   z-index: 1;
@@ -246,7 +273,7 @@ header .toggle.active .fa-xmark {
   transition: letter-spacing 0.3s ease-in-out;
   overflow: hidden;
   width: 265px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   text-align: center;
 }
 
@@ -364,4 +391,20 @@ section.active .menu {
 
 .text-right {
   text-align: right;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.width-55 {
+  width: 55%;
+}
+
+.primary-color {
+  color: var(--primary-color) !important;
+}
+
+.secondary-color {
+  color: var(--secondary-color) !important;
 }
