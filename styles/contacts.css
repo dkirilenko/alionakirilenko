@@ -1,0 +1,115 @@
+#contacts-page {
+  /* height: 100%; */
+  width: 80%;
+  display: flex;
+  margin-top: 140px;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  transform-origin: left;
+  overflow: hidden;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cherkassy-panorama {
+  height: 250px;
+  margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.hoverbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  transition: transform .5s ease-in-out;
+  backface-visibility: hidden;
+}
+
+#cherkassy-panorama .photo {
+  transform: rotateY(0deg);
+}
+
+#cherkassy-panorama .message {
+  transform: rotateY(180deg);
+}
+
+#cherkassy-panorama:hover .photo {
+  transform: rotateY(180deg);
+}
+
+#cherkassy-panorama:hover .message {
+  transform: rotateY(0deg);
+}
+
+#contacts {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  padding-bottom: 16px;
+  gap: 64px;
+}
+
+#google-map {
+  width: 50%;
+}
+
+#contacts-info h3 {
+  margin-bottom: 8px;
+}
+
+#contacts-info h3 i {
+  font-size: 1.3rem;
+  margin-right: 16px
+}
+
+/* .contacts-content {
+  width: 65%;
+  overflow: auto;
+}
+
+.contacts-content * {
+  color: var(--primary-color)
+}
+
+.contacts-content:first-child {
+  padding: 16px;
+}
+
+.contacts-content:last-child {
+  width: 35%;
+  background-color: var(--primary-color);
+}
+
+.contacts-content h3 {
+  padding: 16px;
+  max-width: 500px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.contacts-content h3 i {
+  font-size: 1.5rem;
+  margin-right: 16px
+}
+
+#google-map {
+  margin-bottom: 16px;
+  margin-top: 16px;
+} */

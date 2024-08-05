@@ -159,4 +159,11 @@
     padding-top: 0 !important;
     overflow: unset !important;
   }
+  .contacts-content {
+    width: 100% !important;
+  }
+
+  #google-map {
+    width: 100%
+  }
 }
