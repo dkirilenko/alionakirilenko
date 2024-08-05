@@ -198,7 +198,7 @@ header .toggle {
   cursor: pointer;
 }
 
-header .toggle.active .fa-bars {
+.show-nav-bar header .toggle .fa-bars {
   display: none;
 }
 
@@ -206,7 +206,7 @@ header .toggle .fa-xmark {
   display: none;
 }
 
-header .toggle.active .fa-xmark {
+.show-nav-bar header .toggle .fa-xmark {
   display: inline-block;
 }
 
@@ -408,4 +408,8 @@ section.active .menu {
 
 .secondary-color {
   color: var(--secondary-color) !important;
+}
+
+.show {
+  display: flex !important;
 }

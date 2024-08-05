@@ -65,6 +65,15 @@
     transition: 0.5s;
   }
 
+  header { 
+    height: 140px;
+    transition: 0.5s;
+  }
+
+  body.show-nav-bar header:nth-child(2) {
+    height: 100%;
+  }
+
   header ul li { margin: 0 !important; }
 
   header ul li:first-child {
@@ -142,12 +151,12 @@
   
   #education-page {
     flex-direction: column;
-    padding-top: 140px;
     overflow: auto !important;
   }
 
   .education-content{
     width: 100% !important;
     padding-top: 0 !important;
+    overflow: unset !important;
   }
 }
