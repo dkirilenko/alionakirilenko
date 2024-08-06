@@ -338,11 +338,14 @@ header .toggle .fa-xmark {
   border: 2px solid var(--primary-color);
   border-radius: 50%;
   font-size: 1.5em;
+  transform: scale(1);
+  transition: transform .5s;
 }
 
 .sci li a:hover {
-  background-color: var(--primary-color);
-  color: #21283a;
+  /* background-color: var(--primary-color); */
+  /* color: #21283a; */
+  transform: scale(1.1);
 }
 
 .menu {
