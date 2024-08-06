@@ -1,6 +1,6 @@
 @media (max-width: 991px) {
   * {
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
   }
 
   .for-laptop {
@@ -20,6 +20,10 @@
   section.index-page {
     background-color: rgb(98,64,44);
     background-image: linear-gradient(90deg, rgba(98,64,44,1), rgba(41,31,20,1) 40%);
+  }
+
+  section.index-page * {
+    color: var(--secondary-color);
   }
 
   section.index-page:before {
@@ -159,11 +163,25 @@
     padding-top: 0 !important;
     overflow: unset !important;
   }
-  .contacts-content {
+  
+  #contacts-page {
+    min-height: auto !important;
+    overflow: auto !important;
     width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   #google-map {
-    width: 100%
+    width: 100% !important;
+    min-height: 250px;
+  }
+  
+  #contacts {
+    flex-direction: column;
+  }
+
+  #cherkassy-panorama {
+    margin-bottom: 16px !important;
   }
 }

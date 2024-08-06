@@ -111,6 +111,7 @@ section:after {
 body.show-nav-bar section header .logo,
 body.show-nav-bar section #content,
 body.show-nav-bar section #education-page,
+body.show-nav-bar section #contacts-page,
 body.show-nav-bar section .sci {
   transform: scale(0);
 }
@@ -125,6 +126,7 @@ header {
   align-items: center;
   padding: 30px 50px;
   z-index: 1000;
+  height: 160px;
 }
 
 header .logo {

@@ -1,8 +1,8 @@
 #contacts-page {
-  /* height: 100%; */
-  width: 80%;
+  min-height: 100%;
+  width: 70%;
   display: flex;
-  margin-top: 140px;
+  margin-top: 160px;
   position: relative;
   z-index: 1;
   transition: 0.5s;
@@ -11,10 +11,13 @@
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 16px;
 }
 
 #cherkassy-panorama {
-  height: 250px;
+  min-height: 250px;
+  max-height: 250px;
+  /* height: 250px; */
   margin-bottom: 16px;
   justify-content: center;
   align-items: center;
@@ -32,10 +35,9 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  border: 1px solid var(--primary-color);
-  border-radius: var(--border-radius);
   transition: transform .5s ease-in-out;
   backface-visibility: hidden;
+  border-radius: var(--border-radius);
 }
 
 #cherkassy-panorama .photo {
@@ -44,14 +46,23 @@
 
 #cherkassy-panorama .message {
   transform: rotateY(180deg);
+  border: 1px solid var(--primary-color);
 }
 
 #cherkassy-panorama:hover .photo {
   transform: rotateY(180deg);
 }
 
+
 #cherkassy-panorama:hover .message {
   transform: rotateY(0deg);
+}
+
+#cherkassy-panorama .photo {
+  background-image: url(../images/panorama.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #contacts {
@@ -64,6 +75,7 @@
 
 #google-map {
   width: 50%;
+  max-height: 350px;
 }
 
 #contacts-info h3 {
