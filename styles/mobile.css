@@ -58,6 +58,8 @@
 
   header {
     padding: 20px 20px;
+    height: 140px;
+    transition: 0.5s;
   }
 
   header ul {
@@ -69,9 +71,8 @@
     transition: 0.5s;
   }
 
-  header { 
-    height: 140px;
-    transition: 0.5s;
+  header ul li a:hover {
+    border: 0 !important;
   }
 
   body.show-nav-bar header:nth-child(2) {
@@ -153,13 +154,16 @@
     color: var(--primary-color)
   }
   
-  #education-page {
+  #education-page, #requests-page {
     flex-direction: column;
     overflow: auto !important;
   }
 
+  #requests-page .col-50, #education-page .col-50 { overflow: unset !important; }
+
+  .col-50 { width: 100% !important; }
+
   .education-content{
-    width: 100% !important;
     padding-top: 0 !important;
     overflow: unset !important;
   }
