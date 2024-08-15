@@ -271,7 +271,6 @@ header .toggle .fa-xmark {
   letter-spacing: 2px;
   transition: 0.5s;
   transition: letter-spacing 0.3s ease-in-out;
-  overflow: hidden;
   width: 265px;
   border-radius: var(--border-radius);
   text-align: center;
@@ -442,4 +441,17 @@ ul { list-style-position: inside; }
   display: flex;
   padding: 16px;
   margin-bottom: 16px;
+  cursor: default;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.wrapped-content:hover * {
+  color: var(--secondary-color);
+}
+
+.wrapped-content:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: scale(1.03);
 }
