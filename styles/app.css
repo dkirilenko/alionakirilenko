@@ -446,6 +446,7 @@ section.active .menu {
 .w-auto { width: auto; }
 
 .overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
 
 .background-primary {
   color: var(--secondary-color);
@@ -494,4 +495,41 @@ ul { list-style-position: inside; }
   background-color: var(--primary-color);
   color: var(--secondary-color);
   transform: scale(1.03);
+}
+
+/* ANIMATION */
+.fade-right {
+  transform: translateX(0%);
+  animation: slide-right 0.3s ease-out forwards;
+  animation-delay: var(--animation-delay);
+  opacity: 0;
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-left {
+  transform: translateX(0%);
+  animation: slide-left 0.3s ease-out forwards;
+  animation-delay: var(--animation-delay);
+  opacity: 0;
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
