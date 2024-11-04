@@ -1,0 +1,118 @@
+@media (max-width: 991px) {
+  .for-mobile {
+    display: flex !important;
+  }
+
+  #home-content {
+    margin-top: 3rem;
+  }
+  
+  #home-content h1 div {
+    font-size: 2em;
+  }
+  
+  #home-content h1 span {
+    font-size: 1.2rem;
+  }
+
+  #home-content h2 {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 2rem;
+  }
+
+  section:not(#education) {
+    padding: 16px;
+  }
+
+  section:not(#home) {
+    flex-direction: column;
+  }
+
+  .education-grid-block, .services-grid-block, .contacts-grid-block {
+    width: 100%;
+    padding: 0 !important;
+    margin: 0;
+  }
+
+  .contacts-grid-block:first-child {
+    display: none;
+  }
+
+  .contacts-grid-block:nth-child(2n) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-image {
+    margin-bottom: 24px;
+  }
+  
+  #google-map {
+    margin-top: 1rem;
+  }
+
+  /* Header */
+
+  header:before {
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    content: '';
+    background-color: rgba(85, 107, 115, 0.95);
+  }
+
+  header.active:before {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  
+  .toggle i {
+    font-size: 1.2rem;
+  }
+
+  .toggle .fa-xmark {
+    display: none;
+  }
+
+  #logo, nav {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+  header.active .fa-bars {
+    display: none;
+  }
+
+  header.active #logo {
+    display: flex;
+  }
+
+  header.active nav {
+    position: fixed;
+    flex-direction: column;
+    top: 30%;
+    text-align: center;
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s 0.5s;
+    visibility: visible;
+  }
+
+  header.active .fa-xmark {
+    display: inline-block;
+  }
+}
