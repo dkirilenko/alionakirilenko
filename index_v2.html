@@ -261,8 +261,8 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(ScrollTrigger)
 
-        document.getElementById('show-gallery').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
-        document.getElementById('gallery-back-button').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
+        // document.getElementById('show-gallery').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
+        // document.getElementById('gallery-back-button').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
 
 
         const certificates     = document.querySelectorAll(".certificate-container");
@@ -507,7 +507,6 @@
 
             if (targetId !== currentTargetId) {
               currentTargetId = targetId
-              debugger
               const link = links.find((l) => l.dataset.scrollTargetId === currentTargetId)
               if (link) setActive(link)
             }
@@ -519,9 +518,9 @@
 
 
 
-        // const sections = document.querySelectorAll("section:not(#gallery)");
-        // const navLinks = document.querySelectorAll("nav a");
-        // scrollTo(sections, navLinks, window)
+        const sections = document.querySelectorAll("section:not(#gallery)");
+        const navLinks = document.querySelectorAll("nav a");
+        scrollTo(sections, navLinks, window)
 
         
         // const certificates     = document.querySelectorAll(".certificate-container");
@@ -531,9 +530,9 @@
         
 
 
-        // document.querySelectorAll('.toggle i').forEach((el) => {
-        //   el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
-        // })
+        document.querySelectorAll('.toggle i').forEach((el) => {
+          el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
+        })
 
 
 
