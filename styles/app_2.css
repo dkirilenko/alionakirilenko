@@ -5,6 +5,7 @@
   --secondary-color: #E4E7DF;
   --font-color: var(--primary-color);
   --border-radius: 8px;
+  --box-shadow: 0px 4px 14px #000;
 }
 
 * {
@@ -16,14 +17,30 @@
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) transparent;
   font-size: 16px;
+  overscroll-behavior: contain;
 }
 
 html {
   scroll-behavior: smooth;
+  /* overflow-y: scroll; */
+  /* scroll-snap-type: y mandatory; */
 }
 
 body {
   background-color: #99ABB6;
+  height: 100vh;
+}
+
+.btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  scale: 1;
+  transition: scale 0.5s;
+}
+
+.btn:hover {
+  scale: 1.03;
 }
 
 section {
@@ -32,6 +49,7 @@ section {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  /* scroll-snap-align: center; */
 }
 
 .for-mobile {
@@ -112,6 +130,10 @@ section#home {
   width: 50%;
 }
 
+section#education {
+  position: relative;
+}
+
 section#education .education-grid-block:first-child {
   background-color: var(--secondary-color);
 }
@@ -131,7 +153,7 @@ section#education .education-grid-block:nth-child(2n) .education-card {
 
 .education-card-wrapper {
   width: min(100%, 500px);
-  height: min(100%, 700px);
+  height: min(100%, 800px);
   display: flex;
   margin: 8px;
   padding: 16px;
@@ -160,10 +182,144 @@ section#education .education-grid-block:nth-child(2n) .education-card {
   flex: 1;
 }
 
+#show-gallery {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 16px 56px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
 ul li {
   margin-bottom: 8px;
   text-align: justify;
-    hyphens: auto;
+  hyphens: auto;
+}
+
+/* gallery */
+
+section#gallery {
+  position: fixed;
+  left: 100vw;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: left 0.5s;
+  overflow-y: auto;
+  z-index: 11;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  
+  /* Increase/decrease this value for cross-browser compatibility */
+  /* padding-right: 17px;  */
+  box-sizing: content-box;
+}
+
+section#gallery.active {
+  left: 0;
+}
+
+#gallery-back-button {
+  display: none;
+  position: fixed;
+  z-index: 15;
+  top: 40px;
+  left: 10px;
+  padding: 8px 8px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+section#gallery.active #gallery-back-button {
+  display: block;
+}
+
+section#gallery .certificate-container {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  /* position: sticky; */
+  scroll-snap-align: start;
+  top: 0;
+}
+
+/* section#gallery .certificate-container.outdated {
+  position: relative;
+  transition-delay: 1s;
+  transition-property: position;
+} */
+
+section#gallery .certificate-container:nth-child(2n) {
+  background-color: var(--secondary-color);
+}
+
+section#gallery .certificate-container:nth-child(2n) .certificate-description .title, 
+section#gallery .certificate-container:nth-child(2n) .certificate-description .text {
+  color: var(--primary-color);
+}
+
+.certificate-description, .image-container {
+  padding: 16px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* flex-basis: 70%; */
+}
+
+.certificate-description {
+  gap: 3rem;
+  padding-left: 3rem;
+  width: 30%;
+}
+
+.certificate-description .title, .certificate-description .text {
+  color: var(--secondary-color);
+  width: min(350px, 100%);
+}
+
+.certificate-description .title {
+  text-align: center;
+}
+
+.image-container {
+  /* flex: 1; */
+  width: 70%;
+  height: 100%;
+  justify-content: center;
+}
+
+.image-container img {
+  object-fit: cover;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+#certificates-pagination {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  z-index: 15;
+  justify-content: center;
+  gap: 8px;
+}
+
+.certificates-pagination-item {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.certificates-pagination-item.active {
+  background-color: #859296;
 }
 
 /* services */
@@ -197,6 +353,8 @@ ul li {
   gap: 8px; 
   margin-bottom: 8px;
 }
+
+.services-content-list-line span { flex: 1 }
 
 /* Contacts */
 
@@ -295,4 +453,8 @@ nav a:hover {
 nav a.active {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+}
+
+.toggle i {
+  text-shadow: 1px 1px 2px var(--primary-color);
 }

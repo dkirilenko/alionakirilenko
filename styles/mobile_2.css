@@ -115,4 +115,34 @@
   header.active .fa-xmark {
     display: inline-block;
   }
+
+  /* gallery */
+
+  section#gallery.active {
+    left: -16px;
+    top: -16px;
+  }
+
+  .certificate-container {
+    height: calc(100vh + 16px);
+    /* padding: 16px; */
+    /* width: 100vw; */
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .image-container img {
+    max-width: 100%;
+  }
+
+  .certificate-description {
+    display: none;
+  }
+
+  #certificates-pagination {
+    padding: 0 16px;
+    flex-wrap: wrap
+  }
 }

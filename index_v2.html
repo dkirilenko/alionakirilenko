@@ -8,6 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
     <title>Кириленко Альона | Психотерапевт | Черкаси</title>
     <meta name="description" content="Кириленко Альона - психотерапевт у місті Черкаси. Надаю психологічні послуги: психоаналітична психотерапія дорослих та дітей у місті Черкаси та онлайн">
@@ -19,10 +20,10 @@
       </div>
 
       <nav>
-        <a class="active" href="#home">Головна</a>
-        <a href="#education">Освіта</a>
-        <a href="#services">Послуги</a>
-        <a href="#contacts">Контакти</a>
+        <a href="" data-scroll-target-id="home" class="active">Головна</a>
+        <a href="" data-scroll-target-id="education">Освіта</a>
+        <a href="" data-scroll-target-id="services">Послуги</a>
+        <a href="" data-scroll-target-id="contacts">Контакти</a>
       </nav>
 
       <div class="toggle for-mobile">
@@ -44,6 +45,8 @@
     </section>
 
     <section id="education">
+      
+
       <div class="education-grid-block">
         <div class="education-card-wrapper slide-left-to-right-wrapper">
           <div class="education-card">
@@ -73,22 +76,24 @@
             </div>
             <div class="education-card-content">
               <ul>
-                <ul>
-                  <li lang="uk">Спеціалізація з клінічного психоаналізу “Психоаналітична робота з не-невротичними пацієнтами” (128 годин)</li>
-                  <li lang="uk">Клінічна спеціалізація «Психоаналітичні стратегії в психотерапії дітей та підлітків. Психічні наслідки війни для юного суб'єкту» (128 годин)</li>
-                  <li lang="uk">Курс “Організація психоаналітичної практики в сучасних умовах” (20 годин)</li>
-                  <li lang="uk">Курс “Терапія партнера нарцисичного перверта” (10 годин)</li>
-                  <li lang="uk">Клінічний семінар “Демони печалі: меланхолія та депресія як психічні розлади і феномени. Психоаналітичний погляд” (8 годин)</li>
-                  <li lang="uk">Міжнародна психоаналітична конференція “Неосексуальність: норма і патологія”</li>
-                  <li lang="uk">Всеукраїнський клінічно-практичний симпозіум “Виклики псиспеціалістам в процесі роботи з онкохворими” (12 годин)</li>
-                  <li lang="uk">Семінар-практикум “Перенесення: пристрасть і ненависть в аналітичному просторі”</li>
-                  <li lang="uk">Практично-теоретичний семінар: “Інша реальність. Психотична структура і можливості психоаналізу” (10 годин)</li>
-                </ul>
+                <li lang="uk">Спеціалізація з клінічного психоаналізу “Психоаналітична робота з не-невротичними пацієнтами” (128 годин)</li>
+                <li lang="uk">Клінічна спеціалізація «Психоаналітичні стратегії в психотерапії дітей та підлітків. Психічні наслідки війни для юного суб'єкту» (128 годин)</li>
+                <li lang="uk">Курс “Організація психоаналітичної практики в сучасних умовах” (20 годин)</li>
+                <li lang="uk">Курс “Терапія партнера нарцисичного перверта” (10 годин)</li>
+                <li lang="uk">Клінічний семінар “Демони печалі: меланхолія та депресія як психічні розлади і феномени. Психоаналітичний погляд” (8 годин)</li>
+                <li lang="uk">Міжнародна психоаналітична конференція “Неосексуальність: норма і патологія”</li>
+                <li lang="uk">Всеукраїнський клінічно-практичний симпозіум “Виклики псиспеціалістам в процесі роботи з онкохворими” (12 годин)</li>
+                <li lang="uk">Семінар-практикум “Перенесення: пристрасть і ненависть в аналітичному просторі”</li>
+                <li lang="uk">Практично-теоретичний семінар: “Інша реальність. Психотична структура і можливості психоаналізу” (10 годин)</li>
               </ul>
             </div>
+            <!-- <div id="show-gallery">Більше</div> -->
+
           </div>
         </div>
       </div>
+
+      
     </section>
 
     <section id="services">
@@ -99,67 +104,67 @@
         <div class="services-content-content">
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Страхи та фобії
+            <span>Страхи та фобії</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Страхи та фобії
+            <span>Страхи та фобії</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Порушення сну
+            <span>Порушення сну</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Енурез, енкопрез
+            <span>Енурез, енкопрез</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Нервові тіки
+            <span>Нервові тіки</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Навʼязливі думки/ритуали
+            <span>Навʼязливі думки/ритуали</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Труднощі соціальної адаптації
+            <span>Труднощі соціальної адаптації</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Труднощі в спілкуванні з однолітками
+            <span>Труднощі в спілкуванні з однолітками</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Труднощі в навчанні, проблемна поведінка
+            <span>Труднощі в навчанні, проблемна поведінка</span>
           </div>
           
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Батьківсько-дитячі стосунки
+            <span>Батьківсько-дитячі стосунки</span>
           </div>
           
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Труднощі підліткового віку
+            <span>Труднощі підліткового віку</span>
           </div>
           
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Самопошкодження у підлітків
+            <span>Самопошкодження у підлітків</span>
           </div>
           
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Суїцидальні думки
+            <span>Суїцидальні думки</span>
           </div>
         </div>
       </div>
@@ -173,52 +178,52 @@
         <div class="services-content-content">
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Материнство
+            <span>Материнство</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Супровід вагітності
+            <span>Супровід вагітності</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Післяпологова депресія
+            <span>Післяпологова депресія</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Труднощі в налагодженні контакту з новонародженим
+            <span>Труднощі в налагодженні контакту з новонародженим</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Труднощі у побудуванні стосунків
+            <span>Труднощі у побудуванні стосунків</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Безсоння
+            <span>Безсоння</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Тривога, панічні атаки
+            <span>Тривога, панічні атаки</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Депресія, втрата сенсу життя
+            <span>Депресія, втрата сенсу життя</span>
           </div>
 
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Горювання
+            <span>Горювання</span>
           </div>
           
           <div class="services-content-list-line">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="14" cy="14" r="13" stroke="#556B73" stroke-width="2"/><path d="M11.375 7.875L18.375 13.6597L11.375 20.125" stroke="#556B73" stroke-width="2"/></svg>
-            Розлади харчової поведінки, адикції
+            <span>Розлади харчової поведінки, адикції</span>
           </div>
         </div>
       </div>
@@ -255,6 +260,67 @@
       // use a script tag or an external JS file
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(ScrollTrigger)
+
+        document.getElementById('show-gallery').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
+        document.getElementById('gallery-back-button').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
+
+
+        const certificates     = document.querySelectorAll(".certificate-container");
+        const paginationPoints = document.querySelectorAll(".certificates-pagination-item");
+
+        // const panels = gsap.utils.toArray(".certificate-container")
+        // panels.forEach((panel, i) => {
+  
+        //   ScrollTrigger.create({
+        //     trigger: panel,
+        //     start: "top top", 
+        //     pin: true, 
+        //     pinSpacing: false
+        //   });
+          
+        // });
+
+
+
+        // let s = gsap.utils.toArray(".img-container");
+
+        // gsap.to(s, {
+        //   left: -1000 * (s.length - 1),
+        //   ease: "none",
+        //   scrollTrigger: {
+        //     trigger: "#testtt",
+        //     pin: true,
+        //     // scrub: 1,
+        //     // snap: 1 / (s.length - 1),
+        //     // end: () => "+=" + document.querySelector(".container").offsetWidth
+        //   }
+        // });
+
+
+        // gsap.utils.toArray(".certificate-container").forEach((certificate, i) => {
+        //   ScrollTrigger.create({
+        //     trigger: certificate,
+        //     start: "center center", // When the child is in the middle of the viewport
+        //     end: "bottom",
+        //     scrub: true, // Enables smooth scrubbing
+        //     pin: true,   // Makes the child container sticky
+        //     markers: true,
+        //     onEnter: () => {
+        //       gsap.to('#gallery', {
+        //         scrollTo: { y: certificate, autoKill: false },
+        //         duration: 1, // Duration of smooth scroll
+        //         ease: "power2.out",
+        //       });
+        //     },
+        //   });
+        // });
+        
+
+        // ScrollTrigger.create({
+        //   snap: 1 / 4 // snap whole page to the closest section!
+        // });
+
+
 
         const mm = gsap.matchMedia()
         mm.add({
@@ -323,7 +389,7 @@
               scrollTrigger: {
                 trigger: el,
                 start: "20% bottom",
-                end: 'center center',
+                end: 'center center+=30%',
                 scrub: true
               }
             }
@@ -342,7 +408,7 @@
               scrollTrigger: {
                 trigger: el,
                 start: "20% bottom",
-                end: 'center center',
+                end: 'center center+=30%',
                 scrub: true
               }
             }
@@ -361,7 +427,7 @@
               scrollTrigger: {
                 trigger: el,
                 start: "bottom bottom",
-                end: '+=100',
+                end: '+=50',
                 scrub: true
               }
             }
@@ -392,62 +458,150 @@
 
 
 
+        // function scrollTo(elements, container, callback) {
+        //   const autoScroll = () => {
+        //     const sectionTop = section.offsetTop;
+            
+        //     if (window.scrollY >= sectionTop - 150) {
+        //       newSection = section.getAttribute("id");
+        //     }
+        //   }
 
-        // const sections = document.querySelectorAll("section");
-        // const navLinks = document.querySelectorAll("nav a");
+        //   container.addEventListener("scroll", autoScroll);
 
-        // // Loop through each section to set up ScrollTrigger
-        // sections.forEach((section) => {
-        //   const sectionId = section.getAttribute("id");
-        //   ScrollTrigger.create({
-        //     trigger: section,
-        //     start: "top top",
-        //     end: "bottom bottom",
-        //     onEnter: () => setActiveLink(sectionId),
-        //     onEnterBack: () => setActiveLink(sectionId),
-        //   });
-        // });
 
-        // // Function to add 'active' class to the nav link matching the current section
-        // function setActiveLink(sectionId) {
-        //   navLinks.forEach((link) => {
-        //     link.classList.toggle("active", link.getAttribute("href").substring(1) === sectionId);
-        //   });
+         
+
         // }
 
 
 
+        const scrollTo = (elements, links, container) => {
+          elements = Array.from(elements)
+          links    = Array.from(links)
 
-        const sections = document.querySelectorAll("section");
-        const navLinks = document.querySelectorAll("nav a");
+          const setActive = (link) => {
+            links.forEach((link) => link.classList.remove("active"))
+            link.classList.add("active");
+          }
+          
+          // Add onclick listener
+          links.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault()
 
-        function activateMenu() {
-          let currentSection = "";
+              container.scrollTo({ top: elements[index].offsetTop, behavior: "smooth" });
+              setActive(link)
+            })
+          })
 
-          // Check which section is in view
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 150) {
-              currentSection = section.getAttribute("id");
+          let currentTargetId;
+
+          function activateLink() {
+            let targetId;
+            elements.forEach((el) => {
+              if ((container.scrollY || container.scrollTop) >= el.offsetTop - 150) {
+                targetId = el.getAttribute("id");
+              }
+            });
+
+            if (targetId !== currentTargetId) {
+              currentTargetId = targetId
+              debugger
+              const link = links.find((l) => l.dataset.scrollTargetId === currentTargetId)
+              if (link) setActive(link)
             }
-          });
+          }
 
-          // Add 'active' class to the matching nav link
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").substring(1) === currentSection) {
-              link.classList.add("active");
-            }
-          });
+          // Event listener for scroll
+          container.addEventListener("scroll", activateLink);
         }
 
-        // Event listener for scroll
-        window.addEventListener("scroll", activateMenu);
 
 
-        document.querySelectorAll('.toggle i').forEach((el) => {
-          el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
-        })
+        // const sections = document.querySelectorAll("section:not(#gallery)");
+        // const navLinks = document.querySelectorAll("nav a");
+        // scrollTo(sections, navLinks, window)
+
+        
+        // const certificates     = document.querySelectorAll(".certificate-container");
+        // const paginationPoints = document.querySelectorAll(".certificates-pagination-item");
+        // scrollTo(certificates, paginationPoints, document.getElementById('gallery'))
+
+        
+
+
+        // document.querySelectorAll('.toggle i').forEach((el) => {
+        //   el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
+        // })
+
+
+
+
+
+        // const container = document.getElementById("gallery");
+        // const childElements = document.querySelectorAll(".certificate-container");
+        // const circles = document.querySelectorAll(".certificates-pagination-item");
+
+        // const fullSections = gsap.utils.toArray(".certificate-container");
+
+        // const getScrollDistance = (section) => {
+        //   const itemContainer = section.querySelector(".container");
+        //   return -1 * (itemContainer.offsetHeight - section.offsetHeight);
+        // };
+
+        // fullSections.forEach((section) => {
+        //   let tl = gsap.timeline({
+        //     scrollTrigger: {
+        //       trigger: section,
+        //       start: "top 0%", // item position(start),distance from top(scroller-start)
+        //       end: "+=2050", // starts when start is at scroller-start & ends when... +=2000
+        //       pin: true,
+        //       scrub: true, // scrub animation playhead with scrollbar
+        //       markers: false,
+        //       invalidateOnRefresh: true
+        //     }
+        //   });
+        // })
+
+
+
+
+        // Function to update pagination circles
+        // function updatePagination(index) {
+        //   circles.forEach((circle, i) => {
+        //     circle.classList.toggle("active", i === index);
+        //   });
+        // }
+
+        // Set up ScrollTrigger for each child element
+        // childElements.forEach((child, index) => {
+        //   ScrollTrigger.create({
+        //     trigger: child,
+        //     start: "top center",
+        //     end: "bottom center",
+        //     pin: true,
+        //     scrub: true, // scrub animation playhead with scrollbar
+        //     markers: false,
+        //     onEnter: () => updatePagination(index),
+        //     onEnterBack: () => updatePagination(index),
+        //   });
+        // });
+
+        // Add click events to circles for navigation
+        // circles.forEach((circle, index) => {
+        //   circle.addEventListener("click", () => {
+        //     debugger
+        //     gsap.to(container, {
+        //       scrollTo: { y: childElements[index].offsetTop - 1 },
+        //       duration: 1,
+        //       ease: "power2.out",
+        //     });
+        //   });
+        // });
+
+
+
 
       });
      
