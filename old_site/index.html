@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="styles/mobile.css" />
+    <script src="https://kit.fontawesome.com/ee8d3174b1.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Кириленко Альона | Психотерапевт | Черкаси</title>
+    <meta name="description" content="Кириленко Альона - психотерапевт у місті Черкаси. Надаю психологічні послуги: психоаналітична психотерапія дорослих та дітей у місті Черкаси та онлайн">
+  </head>
+  <body>
+    <!-- Tmp hook for mobile -->
+    <header class="for-mobile">
+      <div class="flex logo_image">
+        <img class="invert" src="images/logo.png"/>
+        <div id="phone-number" class="secondary-color">
+          <i class="fa-solid fa-phone secondary-color"></i>
+          097-244-244-5
+        </div>
+      </div>
+    </header>
+
+    <header>
+      <ul class="w-55">
+        <li>
+          <div class="flex logo_image">
+            <img src="images/logo.png"/>
+            <div id="phone-number">
+              <i class="fa-solid fa-phone"></i>
+              <span class="animated-text">097-244-244-5</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="ml-auto"><a href="/" class="active">Головна</a></li>
+        <li><a href="/education.html">Освіта</a></li>
+        <li><a href="/requests.html">Послуги</a></li>
+        <li><a href="/contacts.html">Контакти</a></li>
+      </ul>
+      <div class="toggle for-mobile">
+        <i class="fa-solid fa-bars secondary-color"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </header>
+
+    <section id="container" class="for-laptop">  
+      <div id="content" class="w-55">
+        <div class="contentBx">
+          <!-- <h4>Привіт,</h4> -->
+          <h2>Кириленко Альона</h4>
+          <h3>
+            Психоаналітично-орієнтований
+            <br>
+            <b>психотерапевт</b>
+          </h3>
+          <p id="quotation">"Ніхто не повинен залишатися наодинці зі своїм стражданням"</p>
+          <div class="flex">
+            <a class="btn" href="/contacts.html">Записатися на консультацію</a>
+            <a class="btn" href="/education.html">Дізнатися<br> більше</a>
+          </div>
+        </div>
+      </div>
+      <div id="right-image">
+        <!-- <img src="" class="main-image" /> -->
+      </div>
+      <!-- <ul class="sci">
+        <li><a href="https://t.me/alionakirilenko_pa"><i class="fa-brands fa-telegram"></i></a></li>
+        <li><a href="https://ig.me/m/a.m.kirilenko_pa"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul> -->
+      <!-- <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Sertificates</a></li>
+      </ul> -->
+    </section>
+
+    <section id="container" class="for-mobile index-page">  
+      <div id="content">
+        <div class="contentBx">
+          <!-- <h4>Привіт,</h4> -->
+          <h2>Альона</h4>
+          <h2 class="text-right">Кириленко</h4>
+          <h3>
+            Психоаналітично-орієнтований
+            <br>
+            <b>психотерапевт</b>
+          </h3>
+        </div>
+
+        <a class="btn" id="consultation-btn" href="/contacts.html">Записатися на консультацію</a>
+      </div>
+      
+    </section>
+
+    <script>
+      const body = document.getElementsByTagName('body')[0];
+      const toggle = document.querySelector('.toggle');
+
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('show-nav-bar')
+        toggle.classList.toggle('active')
+      })
+    </script>
+  </body>
+</html>

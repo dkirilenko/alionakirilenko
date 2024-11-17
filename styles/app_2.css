@@ -366,10 +366,11 @@ section#contacts {
   aspect-ratio: 1 / 1;
   width: 70%;
   background-color: var(--primary-color);
-  background-image: url(../images/v2/profile.png);
-  background-size: 90%;
+  background-image: url(../images/v2/profile.webp);
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
+  background-position-y: 10%;
   border-radius: 50%;
 }
 
