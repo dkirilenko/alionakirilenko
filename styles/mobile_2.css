@@ -123,26 +123,17 @@
     top: -16px;
   }
 
-  .certificate-container {
-    height: calc(100vh + 16px);
-    /* padding: 16px; */
-    /* width: 100vw; */
-  }
-
-  .image-container {
+  #slider {
     width: 100%;
+    margin: 8px 0;
   }
 
-  .image-container img {
-    max-width: 100%;
-  }
-
-  .certificate-description {
-    display: none;
-  }
-
-  #certificates-pagination {
-    padding: 0 16px;
-    flex-wrap: wrap
+  .slider-item:nth-child(1),
+  .slider-item:nth-child(2) {
+    left: 16px;
+    top: 24px;
+    width: calc(100% - 32px);
+    height: calc(100% - 24px);
+    box-shadow: none;
   }
 }

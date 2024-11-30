@@ -104,13 +104,41 @@
                 <li lang="uk">Практично-теоретичний семінар: “Інша реальність. Психотична структура і можливості психоаналізу” (10 годин)</li>
               </ul>
             </div>
-            <!-- <div id="show-gallery">Більше</div> -->
-
+            <div id="show-gallery" class="btn">Більше</div>
           </div>
         </div>
       </div>
 
-      
+      <section id="gallery">
+        <div id="gallery-back-button">Повернутися</div>
+        <div id="slider">
+          <div class="slider-item" data-elid="0"><img src="../images/certificates/1.webp" /></div>
+          <div class="slider-item" data-elid="1"><img src="../images/certificates/2.webp" /></div>
+          <div class="slider-item" data-elid="2"><img src="../images/certificates/3.webp" /></div>
+          <div class="slider-item" data-elid="3"><img src="../images/certificates/4.webp" /></div>
+          <div class="slider-item" data-elid="4"><img src="../images/certificates/5.webp" /></div>
+          <div class="slider-item" data-elid="5"><img src="../images/certificates/6.webp" /></div>
+          <div class="slider-item" data-elid="6"><img src="../images/certificates/7.webp" /></div>
+          <div class="slider-item" data-elid="7"><img src="../images/certificates/8.webp" /></div>
+          <div class="slider-item" data-elid="8"><img src="../images/certificates/9.webp" /></div>
+          <div class="slider-item" data-elid="9"><img src="../images/certificates/10.webp" /></div>
+          <!-- <div class="slider-item" data-elid="10"><img src="../images/certificates/11.webp" /></div> -->
+          <div class="slider-item" data-elid="11"><img src="../images/certificates/12.webp" /></div>
+          <!-- <div class="slider-item" data-elid="12"><img src="../images/certificates/13.webp" /></div> -->
+          <div class="slider-item" data-elid="13"><img src="../images/certificates/14.webp" /></div>
+          <div class="slider-item" data-elid="14"><img src="../images/certificates/15.webp" /></div>
+          <div class="slider-item" data-elid="15"><img src="../images/certificates/16.webp" /></div>
+        </div>
+        <div id="slider-controls">
+          <div class="slider-per-page">
+            
+          </div>
+          <div class="slider-buttons">
+            <div class="slider-button left"></div>
+            <div class="slider-button right"></div>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id="services">
@@ -278,66 +306,8 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         gsap.registerPlugin(ScrollTrigger)
 
-        // document.getElementById('show-gallery').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
-        // document.getElementById('gallery-back-button').addEventListener('click', () => document.getElementById('gallery').classList.toggle('active'))
-
-
         const certificates     = document.querySelectorAll(".certificate-container");
         const paginationPoints = document.querySelectorAll(".certificates-pagination-item");
-
-        // const panels = gsap.utils.toArray(".certificate-container")
-        // panels.forEach((panel, i) => {
-  
-        //   ScrollTrigger.create({
-        //     trigger: panel,
-        //     start: "top top", 
-        //     pin: true, 
-        //     pinSpacing: false
-        //   });
-          
-        // });
-
-
-
-        // let s = gsap.utils.toArray(".img-container");
-
-        // gsap.to(s, {
-        //   left: -1000 * (s.length - 1),
-        //   ease: "none",
-        //   scrollTrigger: {
-        //     trigger: "#testtt",
-        //     pin: true,
-        //     // scrub: 1,
-        //     // snap: 1 / (s.length - 1),
-        //     // end: () => "+=" + document.querySelector(".container").offsetWidth
-        //   }
-        // });
-
-
-        // gsap.utils.toArray(".certificate-container").forEach((certificate, i) => {
-        //   ScrollTrigger.create({
-        //     trigger: certificate,
-        //     start: "center center", // When the child is in the middle of the viewport
-        //     end: "bottom",
-        //     scrub: true, // Enables smooth scrubbing
-        //     pin: true,   // Makes the child container sticky
-        //     markers: true,
-        //     onEnter: () => {
-        //       gsap.to('#gallery', {
-        //         scrollTo: { y: certificate, autoKill: false },
-        //         duration: 1, // Duration of smooth scroll
-        //         ease: "power2.out",
-        //       });
-        //     },
-        //   });
-        // });
-        
-
-        // ScrollTrigger.create({
-        //   snap: 1 / 4 // snap whole page to the closest section!
-        // });
-
-
 
         const mm = gsap.matchMedia()
         mm.add({
@@ -471,28 +441,6 @@
           );
         })
 
-
-
-
-
-        // function scrollTo(elements, container, callback) {
-        //   const autoScroll = () => {
-        //     const sectionTop = section.offsetTop;
-            
-        //     if (window.scrollY >= sectionTop - 150) {
-        //       newSection = section.getAttribute("id");
-        //     }
-        //   }
-
-        //   container.addEventListener("scroll", autoScroll);
-
-
-         
-
-        // }
-
-
-
         const scrollTo = (elements, links, container) => {
           elements = Array.from(elements)
           links    = Array.from(links)
@@ -533,95 +481,45 @@
           container.addEventListener("scroll", activateLink);
         }
 
-
-
         const sections = document.querySelectorAll("section:not(#gallery)");
         const navLinks = document.querySelectorAll("nav a");
         scrollTo(sections, navLinks, window)
 
-        
-        // const certificates     = document.querySelectorAll(".certificate-container");
-        // const paginationPoints = document.querySelectorAll(".certificates-pagination-item");
-        // scrollTo(certificates, paginationPoints, document.getElementById('gallery'))
-
-        
+        const gallery = document.getElementById('gallery');
+        document.getElementById('show-gallery').addEventListener('click', () => { gallery.classList.toggle('active'); document.querySelector('body').classList.add('no-scroll') })
+        document.getElementById('gallery-back-button').addEventListener('click', () => { gallery.classList.toggle('active'); document.querySelector('body').classList.remove('no-scroll') })
 
 
         document.querySelectorAll('.toggle i').forEach((el) => {
           el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
         })
 
+        const refreshPerPage = (elid) => {
+          document.querySelectorAll('.slider-per-page-item').forEach((el) => el.classList.remove('active'))
+          document.querySelector(`.slider-per-page-item[data-elid="${elid}"]`).classList.add('active')
+        }
 
+        const perPageContainer = document.querySelector('.slider-per-page')
+        document.querySelectorAll('.slider-item').forEach((el, index) => {
+          const perPageElement = document.createElement('div');
+          perPageElement.classList.add('slider-per-page-item')
+          perPageElement.dataset.elid = el.dataset.elid
+          perPageContainer.append(perPageElement)
+        })
+        refreshPerPage(document.querySelectorAll('.slider-item')[0].dataset.elid)
 
+        const mainItem = document.getElementById('slider')
+        document.querySelector('.slider-button.right').addEventListener('click', () => {
+          const sliders = document.querySelectorAll('.slider-item')
+          refreshPerPage(sliders[1].dataset.elid)
+          mainItem.appendChild(sliders[0])
+        })
 
-
-        // const container = document.getElementById("gallery");
-        // const childElements = document.querySelectorAll(".certificate-container");
-        // const circles = document.querySelectorAll(".certificates-pagination-item");
-
-        // const fullSections = gsap.utils.toArray(".certificate-container");
-
-        // const getScrollDistance = (section) => {
-        //   const itemContainer = section.querySelector(".container");
-        //   return -1 * (itemContainer.offsetHeight - section.offsetHeight);
-        // };
-
-        // fullSections.forEach((section) => {
-        //   let tl = gsap.timeline({
-        //     scrollTrigger: {
-        //       trigger: section,
-        //       start: "top 0%", // item position(start),distance from top(scroller-start)
-        //       end: "+=2050", // starts when start is at scroller-start & ends when... +=2000
-        //       pin: true,
-        //       scrub: true, // scrub animation playhead with scrollbar
-        //       markers: false,
-        //       invalidateOnRefresh: true
-        //     }
-        //   });
-        // })
-
-
-
-
-        // Function to update pagination circles
-        // function updatePagination(index) {
-        //   circles.forEach((circle, i) => {
-        //     circle.classList.toggle("active", i === index);
-        //   });
-        // }
-
-        // Set up ScrollTrigger for each child element
-        // childElements.forEach((child, index) => {
-        //   ScrollTrigger.create({
-        //     trigger: child,
-        //     start: "top center",
-        //     end: "bottom center",
-        //     pin: true,
-        //     scrub: true, // scrub animation playhead with scrollbar
-        //     markers: false,
-        //     onEnter: () => updatePagination(index),
-        //     onEnterBack: () => updatePagination(index),
-        //   });
-        // });
-
-        // Add click events to circles for navigation
-        // circles.forEach((circle, index) => {
-        //   circle.addEventListener("click", () => {
-        //     debugger
-        //     gsap.to(container, {
-        //       scrollTo: { y: childElements[index].offsetTop - 1 },
-        //       duration: 1,
-        //       ease: "power2.out",
-        //     });
-        //   });
-        // });
-
-        // if ("geolocation" in navigator) {
-        //   navigator.geolocation.getCurrentPosition((position) => {
-        //     console.log(position);
-        //   });
-        // } else {
-        // }
+        document.querySelector('.slider-button.left').addEventListener('click', () => {
+          const sliders = document.querySelectorAll('.slider-item')
+          mainItem.prepend(sliders[sliders.length - 1])
+          refreshPerPage(sliders[sliders.length - 1].dataset.elid)
+        })
 
         let message;
         try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
