@@ -352,6 +352,8 @@ section#gallery.active #gallery-back-button {
   box-shadow: none;
 }
 
+.slider-item:nth-child(2) { opacity: 1 }
+
 .slider-item:nth-child(3n) { left: calc(60% + 220px); opacity: 0.6; }
 .slider-item:nth-child(4n) { left: calc(60% + 220px + 200px * 1 + 20px); }
 .slider-item:nth-child(5n) { left: calc(60% + 220px + 200px * 2 + 20px * 2); }
@@ -508,6 +510,7 @@ section#contacts {
   background-position-x: center;
   background-position-y: 10%;
   border-radius: 50%;
+  position: relative;
 }
 
 .contacts-grid-block {
