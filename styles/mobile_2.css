@@ -136,4 +136,6 @@
     height: calc(100% - 24px);
     box-shadow: none;
   }
+
+  .line, .circle { display: none; }
 }

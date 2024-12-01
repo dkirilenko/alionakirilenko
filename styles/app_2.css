@@ -137,6 +137,7 @@ section#home {
   justify-content: center;
   align-items: center;
   width: 50%;
+  position: relative;
 }
 
 section#education {
@@ -175,6 +176,7 @@ section#education .education-grid-block:nth-child(2n) .education-card {
   flex-direction: column;
   border-radius: var(--border-radius);
   box-shadow: 0px 4px 14px #000;
+  position: relative;
 }
 
 .education-card-title {
@@ -189,6 +191,7 @@ section#education .education-grid-block:nth-child(2n) .education-card {
   display: flex;
   align-items: center;
   flex: 1;
+  z-index: 1;
 }
 
 #show-gallery {
@@ -205,6 +208,37 @@ ul li {
   margin-bottom: 8px;
   text-align: justify;
   hyphens: auto;
+}
+
+/* Separator */
+.education-separator {
+  position: absolute;
+  top: 40%;
+  right: -16px;
+}
+
+.circle {
+  width: 35px;
+  height: 35px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.education-separator.line {
+  background-color: var(--primary-color);
+  height: 6px;
+  top: calc(40% + 23px);
+  right: 0;
+}
+
+.education-separator.circle.secondary {
+  background-color: var(--secondary-color);
+  left: -16px;
+}
+
+.education-separator.line.secondary {
+  background-color: var(--secondary-color);
+  left: 0;
 }
 
 /* gallery */
@@ -408,6 +442,23 @@ section#gallery.active #gallery-back-button {
 }
 
 /* services */
+
+.services-separator {
+  position: absolute;  
+  background-color: var(--primary-color);
+}
+
+.services-separator.line {
+  left: calc(50% - 2px);
+  width: 4px;
+  top: 10%;
+  bottom: 10%;
+}
+
+.services-separator.circle {
+  left: calc(50% - 18px);
+  top: 50%;
+}
 
 .services-grid-block {
   margin-top: 7rem;

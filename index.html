@@ -62,11 +62,11 @@
     </section>
 
     <section id="education">
-      
-
       <div class="education-grid-block">
+        <div class="education-separator line"></div>
         <div class="education-card-wrapper slide-left-to-right-wrapper">
           <div class="education-card">
+            <div class="education-separator circle"></div>
             <div class="education-card-title">
               Освіта
             </div>
@@ -86,8 +86,12 @@
       </div>
 
       <div class="education-grid-block">
+        <div class="education-separator line secondary"></div>
+
         <div class="education-card-wrapper slide-right-to-left-wrapper">
           <div class="education-card">
+            <div class="education-separator circle secondary"></div>
+
             <div class="education-card-title">
               Спеціалізації
             </div>
@@ -108,40 +112,42 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <section id="gallery">
-        <div id="gallery-back-button">Повернутися</div>
-        <div id="slider">
-          <div class="slider-item" data-elid="0"><img src="../images/certificates/1.webp" /></div>
-          <div class="slider-item" data-elid="1"><img src="../images/certificates/2.webp" /></div>
-          <div class="slider-item" data-elid="2"><img src="../images/certificates/3.webp" /></div>
-          <div class="slider-item" data-elid="3"><img src="../images/certificates/4.webp" /></div>
-          <div class="slider-item" data-elid="4"><img src="../images/certificates/5.webp" /></div>
-          <div class="slider-item" data-elid="5"><img src="../images/certificates/6.webp" /></div>
-          <div class="slider-item" data-elid="6"><img src="../images/certificates/7.webp" /></div>
-          <div class="slider-item" data-elid="7"><img src="../images/certificates/8.webp" /></div>
-          <div class="slider-item" data-elid="8"><img src="../images/certificates/9.webp" /></div>
-          <div class="slider-item" data-elid="9"><img src="../images/certificates/10.webp" /></div>
-          <!-- <div class="slider-item" data-elid="10"><img src="../images/certificates/11.webp" /></div> -->
-          <div class="slider-item" data-elid="11"><img src="../images/certificates/12.webp" /></div>
-          <!-- <div class="slider-item" data-elid="12"><img src="../images/certificates/13.webp" /></div> -->
-          <div class="slider-item" data-elid="13"><img src="../images/certificates/14.webp" /></div>
-          <div class="slider-item" data-elid="14"><img src="../images/certificates/15.webp" /></div>
-          <div class="slider-item" data-elid="15"><img src="../images/certificates/16.webp" /></div>
+    <section id="gallery">
+      <div id="gallery-back-button">Повернутися</div>
+      <div id="slider">
+        <div class="slider-item" data-elid="0"><img src="../images/certificates/1.webp" /></div>
+        <div class="slider-item" data-elid="1"><img src="../images/certificates/2.webp" /></div>
+        <div class="slider-item" data-elid="2"><img src="../images/certificates/3.webp" /></div>
+        <div class="slider-item" data-elid="3"><img src="../images/certificates/4.webp" /></div>
+        <div class="slider-item" data-elid="4"><img src="../images/certificates/5.webp" /></div>
+        <div class="slider-item" data-elid="5"><img src="../images/certificates/6.webp" /></div>
+        <div class="slider-item" data-elid="6"><img src="../images/certificates/7.webp" /></div>
+        <div class="slider-item" data-elid="7"><img src="../images/certificates/8.webp" /></div>
+        <div class="slider-item" data-elid="8"><img src="../images/certificates/9.webp" /></div>
+        <div class="slider-item" data-elid="9"><img src="../images/certificates/10.webp" /></div>
+        <!-- <div class="slider-item" data-elid="10"><img src="../images/certificates/11.webp" /></div> -->
+        <div class="slider-item" data-elid="11"><img src="../images/certificates/12.webp" /></div>
+        <!-- <div class="slider-item" data-elid="12"><img src="../images/certificates/13.webp" /></div> -->
+        <div class="slider-item" data-elid="13"><img src="../images/certificates/14.webp" /></div>
+        <div class="slider-item" data-elid="14"><img src="../images/certificates/15.webp" /></div>
+        <div class="slider-item" data-elid="15"><img src="../images/certificates/16.webp" /></div>
+      </div>
+      <div id="slider-controls">
+        <div class="slider-per-page">
+          
         </div>
-        <div id="slider-controls">
-          <div class="slider-per-page">
-            
-          </div>
-          <div class="slider-buttons">
-            <div class="slider-button left"></div>
-            <div class="slider-button right"></div>
-          </div>
+        <div class="slider-buttons">
+          <div class="slider-button left"></div>
+          <div class="slider-button right"></div>
         </div>
-      </section>
+      </div>
     </section>
 
     <section id="services">
+      <div class="services-separator line"></div>
+      <div class="services-separator circle "></div>
       <div class="services-grid-block">
         <div class="services-card-title">
           Робота з дітьми та підлітками
@@ -213,8 +219,6 @@
           </div>
         </div>
       </div>
-
-
 
       <div class="services-grid-block">
         <div class="services-card-title">
@@ -401,6 +405,23 @@
             }
           );
         })
+
+        document.querySelectorAll('.education-separator.line').forEach((el) => {
+          gsap.fromTo(el,
+            {
+              width: 0
+            },
+            {
+              width: '50%',
+              scrollTrigger: {
+                trigger: '.education-card-wrapper',
+                start: "center center+=30%",
+                end: 'center+=150% center+=150%',
+                scrub: true
+              }
+            }
+          );
+        })          
         
         document.querySelectorAll('.services-content-list-line').forEach((el) => {
           gsap.fromTo(el,
@@ -420,6 +441,41 @@
             }
           );
         })
+
+        gsap.fromTo(document.querySelector('.services-separator.line'),
+          {
+            bottom: '90%'
+          },
+          {
+            bottom: '10%',
+            scrollTrigger: {
+              trigger: '#services',
+              start: "top top+=350",
+              end: 'center center',
+              scrub: true,
+            }
+          }
+        );
+
+        
+        // gsap.fromTo(document.querySelector('.services-separator.circle'),
+        //   {
+        //     clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+        //   },
+        //   {
+        //     clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        //     scrollTrigger: {
+        //       trigger: '#services',
+        //       start: "center center-=50vh",
+        //       end: '+=36px',
+        //       scrub: true,
+        //       markers: true
+        //     }
+        //   }
+        // );
+
+      //   <div class=""></div>
+      // <div class="services-separator circle "></div>
         
         
         document.querySelectorAll('.services-card-title').forEach((el, index) => {
