@@ -22,13 +22,12 @@
 
 html {
   scroll-behavior: smooth;
-  /* overflow-y: scroll; */
-  /* scroll-snap-type: y mandatory; */
 }
 
 body {
   background-color: #99ABB6;
   height: 100vh;
+  position:relative;
 }
 
 .no-scroll {
@@ -334,7 +333,7 @@ section#gallery.active #gallery-back-button {
   display: flex;
   justify-content: center;
   border-radius: var(--border-radius);
-  transition:  0.7s;
+  transition:  0.7s, transform 0s;
   opacity: 1;
   box-shadow: var(--box-shadow);
 }

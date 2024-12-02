@@ -542,9 +542,16 @@
         scrollTo(sections, navLinks, window)
 
         const gallery = document.getElementById('gallery');
-        document.getElementById('show-gallery').addEventListener('click', () => { gallery.classList.toggle('active'); document.querySelector('body').classList.add('no-scroll') })
-        document.getElementById('gallery-back-button').addEventListener('click', () => { gallery.classList.toggle('active'); document.querySelector('body').classList.remove('no-scroll') })
-
+        document.getElementById('show-gallery').addEventListener('click', () => {
+          gallery.classList.toggle('active');
+          document.querySelector('body').classList.add('no-scroll')
+          document.querySelector('html').classList.add('no-scroll')
+        })
+        document.getElementById('gallery-back-button').addEventListener('click', () => {
+          gallery.classList.toggle('active');
+          document.querySelector('body').classList.remove('no-scroll')
+          document.querySelector('html').classList.remove('no-scroll')
+        })
 
         document.querySelectorAll('.toggle i').forEach((el) => {
           el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
@@ -555,6 +562,7 @@
           document.querySelector(`.slider-per-page-item[data-elid="${elid}"]`).classList.add('active')
         }
 
+
         const perPageContainer = document.querySelector('.slider-per-page')
         document.querySelectorAll('.slider-item').forEach((el, index) => {
           const perPageElement = document.createElement('div');
@@ -564,22 +572,60 @@
         })
         refreshPerPage(document.querySelectorAll('.slider-item')[0].dataset.elid)
 
+
+        // let message;
+        // try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
+        // fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
+      
+        
+
+
+        // *** Swipe effect ***
+        let startX;
+
+        const threshold = 100; // Minimum swipe distance in pixels
         const mainItem = document.getElementById('slider')
-        document.querySelector('.slider-button.right').addEventListener('click', () => {
+
+        // Helper function to handle swipe to left (move to next item)
+        const nextItem = () => {
           const sliders = document.querySelectorAll('.slider-item')
           refreshPerPage(sliders[1].dataset.elid)
           mainItem.appendChild(sliders[0])
-        })
+        };
 
-        document.querySelector('.slider-button.left').addEventListener('click', () => {
+        // Helper function to handle swipe to right (move to previous item)
+        const prevItem = () => {
           const sliders = document.querySelectorAll('.slider-item')
           mainItem.prepend(sliders[sliders.length - 1])
           refreshPerPage(sliders[sliders.length - 1].dataset.elid)
-        })
+        };
 
-        let message;
-        try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
-        fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
+        // Add touch event listeners
+        mainItem.addEventListener('touchstart', (e) => {
+          const touch = e.changedTouches[0];
+          startX = touch.pageX;
+          currentSwipeElement = e.target;
+        }, false);
+
+        mainItem.addEventListener("touchmove", (e) => {
+          const touch = e.changedTouches[0];
+          mainItem.querySelector('.slider-item:nth-child(2)').style.transform = `translateX(${touch.pageX - startX}px)`
+        });
+
+        mainItem.addEventListener('touchend', (e) => {
+          const touch = e.changedTouches[0];
+          const distX = touch.pageX - startX; // Distance moved horizontally
+          const swipeElement = mainItem.querySelector('.slider-item:nth-child(2)')
+
+          if (Math.abs(distX) >= threshold) {
+            distX > 0 ? nextItem() : prevItem()
+          }
+
+          swipeElement.style.transform = `translateX(0px)`
+        }, false);
+
+        document.querySelector('.slider-button.right').addEventListener('click', nextItem)
+        document.querySelector('.slider-button.left').addEventListener('click', prevItem)
       });
      
      </script>
