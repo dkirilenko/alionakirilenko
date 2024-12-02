@@ -30,7 +30,7 @@
       }
     </script>
   </head>
-  <body>
+  <body tabindex="0">
     <header>
       <div id="logo">
         <img src="images/v2/logo.png">
@@ -632,8 +632,15 @@
 
         document.querySelector('.slider-button.right').addEventListener('click', nextItem)
         document.querySelector('.slider-button.left').addEventListener('click', prevItem)
+
+        document.querySelector('body').addEventListener('keydown', (e) => {
+          if (document.getElementById('gallery').classList.contains('active')) {
+            if (e.key == 'ArrowRight') { nextItem() }
+            if (e.key == 'ArrowLeft') { prevItem() }
+          }
+        })
       });
-     
+
      </script>
   </body>
 </html>
