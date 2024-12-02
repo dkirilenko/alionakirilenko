@@ -1,50 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <!-- Homepage -->
   <url>
     <loc>https://alionakirilenko.com/</loc>
-    <lastmod>2024-08-16</lastmod>
+    <lastmod>2024-12-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <url>
-    <loc>https://alionakirilenko.com/index</loc>
-    <lastmod>2024-08-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>https://alionakirilenko.com/index.html</loc>
-    <lastmod>2024-08-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Education -->
-  <!-- <url>
-    <loc>https://alionakirilenko.com/education</loc>
-    <lastmod>2024-08-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url> -->
-
-  <!-- Requests -->
-  <!-- <url>
-    <loc>https://alionakirilenko.com/requests</loc>
-    <lastmod>2024-08-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url> -->
-
-  <!-- Contacts -->
-  <!-- <url>
-    <loc>https://alionakirilenko.com/contacts</loc>
-    <lastmod>2024-08-16</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url> -->
-
 </urlset>

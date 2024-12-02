@@ -117,22 +117,32 @@
     <section id="gallery">
       <div id="gallery-back-button">Повернутися</div>
       <div id="slider">
-        <div class="slider-item" data-elid="0"><img src="../images/certificates/1.webp" /></div>
-        <div class="slider-item" data-elid="1"><img src="../images/certificates/2.webp" /></div>
-        <div class="slider-item" data-elid="2"><img src="../images/certificates/3.webp" /></div>
-        <div class="slider-item" data-elid="3"><img src="../images/certificates/4.webp" /></div>
-        <div class="slider-item" data-elid="4"><img src="../images/certificates/5.webp" /></div>
-        <div class="slider-item" data-elid="5"><img src="../images/certificates/6.webp" /></div>
-        <div class="slider-item" data-elid="6"><img src="../images/certificates/7.webp" /></div>
-        <div class="slider-item" data-elid="7"><img src="../images/certificates/8.webp" /></div>
-        <div class="slider-item" data-elid="8"><img src="../images/certificates/9.webp" /></div>
-        <div class="slider-item" data-elid="9"><img src="../images/certificates/10.webp" /></div>
-        <!-- <div class="slider-item" data-elid="10"><img src="../images/certificates/11.webp" /></div> -->
-        <div class="slider-item" data-elid="11"><img src="../images/certificates/12.webp" /></div>
-        <!-- <div class="slider-item" data-elid="12"><img src="../images/certificates/13.webp" /></div> -->
-        <div class="slider-item" data-elid="13"><img src="../images/certificates/14.webp" /></div>
-        <div class="slider-item" data-elid="14"><img src="../images/certificates/15.webp" /></div>
-        <div class="slider-item" data-elid="15"><img src="../images/certificates/16.webp" /></div>
+        <div class="slider-item" data-elid="26"><img src="../images/certificates/16.webp" /></div>
+        <div class="slider-item" data-elid="1"><img src="../images/certificates/diplom.jpg" /></div>
+        <div class="slider-item" data-elid="2"><img src="../images/certificates/diplom_dodatok.jpg" /></div>
+        <div class="slider-item" data-elid="3"><img src="../images/certificates/19.jpg" /></div>
+        <div class="slider-item" data-elid="7"><img src="../images/certificates/18.jpg" /></div>
+        <div class="slider-item" data-elid="4"><img src="../images/certificates/24.jpg" /></div>
+        <div class="slider-item" data-elid="5"><img src="../images/certificates/25.jpg" /></div>
+        <div class="slider-item" data-elid="6"><img src="../images/certificates/26.jpg" /></div>
+        <div class="slider-item" data-elid="8"><img src="../images/certificates/20.jpg" /></div>
+        <div class="slider-item" data-elid="9"><img src="../images/certificates/21.jpg" /></div>
+        <div class="slider-item" data-elid="10"><img src="../images/certificates/22.jpg" /></div>
+        <div class="slider-item" data-elid="11"><img src="../images/certificates/1.webp" /></div>
+        <div class="slider-item" data-elid="12"><img src="../images/certificates/2.webp" /></div>
+        <div class="slider-item" data-elid="13"><img src="../images/certificates/3.webp" /></div>
+        <div class="slider-item" data-elid="14"><img src="../images/certificates/4.webp" /></div>
+        <div class="slider-item" data-elid="15"><img src="../images/certificates/5.webp" /></div>
+        <div class="slider-item" data-elid="16"><img src="../images/certificates/6.webp" /></div>
+        <div class="slider-item" data-elid="17"><img src="../images/certificates/7.webp" /></div>
+        <div class="slider-item" data-elid="18"><img src="../images/certificates/8.webp" /></div>
+        <div class="slider-item" data-elid="19"><img src="../images/certificates/9.jpg" /></div>
+        <div class="slider-item" data-elid="20"><img src="../images/certificates/10.jpg" /></div>
+        <div class="slider-item" data-elid="21"><img src="../images/certificates/11.webp" /></div>
+        <div class="slider-item" data-elid="22"><img src="../images/certificates/12.jpg" /></div>
+        <div class="slider-item" data-elid="23"><img src="../images/certificates/13.webp" /></div>
+        <div class="slider-item" data-elid="24"><img src="../images/certificates/14.webp" /></div>
+        <div class="slider-item" data-elid="25"><img src="../images/certificates/15.webp" /></div>
       </div>
       <div id="slider-controls">
         <div class="slider-per-page">
@@ -572,13 +582,9 @@
         })
         refreshPerPage(document.querySelectorAll('.slider-item')[0].dataset.elid)
 
-
-        // let message;
-        // try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
-        // fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
-      
-        
-
+        let message;
+        try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
+        fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
 
         // *** Swipe effect ***
         let startX;
