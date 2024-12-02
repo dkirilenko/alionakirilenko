@@ -624,7 +624,7 @@
           const swipeElement = mainItem.querySelector('.slider-item:nth-child(2)')
 
           if (Math.abs(distX) >= threshold) {
-            distX > 0 ? nextItem() : prevItem()
+            distX > 0 ? prevItem() : nextItem()
           }
 
           swipeElement.style.transform = `translateX(0px)`
