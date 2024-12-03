@@ -37,10 +37,10 @@
       </div>
 
       <nav>
-        <a href="" data-scroll-target-id="home" class="active">Головна</a>
-        <a href="" data-scroll-target-id="education">Освіта</a>
-        <a href="" data-scroll-target-id="services">Послуги</a>
-        <a href="" data-scroll-target-id="contacts">Контакти</a>
+        <a data-scroll-target-id="home" class="active">Головна</a>
+        <a data-scroll-target-id="education">Освіта</a>
+        <a data-scroll-target-id="services">Послуги</a>
+        <a data-scroll-target-id="contacts">Контакти</a>
       </nav>
 
       <div class="toggle for-mobile">
@@ -563,9 +563,12 @@
           document.querySelector('html').classList.remove('no-scroll')
         })
 
+        // Show/Hide mobile menu on bar/cross click
         document.querySelectorAll('.toggle i').forEach((el) => {
           el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
         })
+        // Hide mobile menu on link click
+        document.querySelectorAll('nav a').forEach((el) => el.addEventListener('click', () => document.querySelector('header').classList.remove('active')))
 
         const refreshPerPage = (elid) => {
           document.querySelectorAll('.slider-per-page-item').forEach((el) => el.classList.remove('active'))
@@ -587,7 +590,7 @@
         fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
 
         // *** Swipe effect ***
-        let startX;
+        let startX, swipeElement;
 
         const threshold = 100; // Minimum swipe distance in pixels
         const mainItem = document.getElementById('slider')
@@ -611,22 +614,24 @@
           const touch = e.changedTouches[0];
           startX = touch.pageX;
           currentSwipeElement = e.target;
+          swipeElement = mainItem.querySelector('.slider-item:nth-child(2)')
+          swipeElement.style.transition = `0.7s, transform 0s`
         }, false);
 
         mainItem.addEventListener("touchmove", (e) => {
           const touch = e.changedTouches[0];
-          mainItem.querySelector('.slider-item:nth-child(2)').style.transform = `translateX(${touch.pageX - startX}px)`
+          swipeElement.style.transform = `translateX(${touch.pageX - startX}px)`
         });
 
         mainItem.addEventListener('touchend', (e) => {
           const touch = e.changedTouches[0];
           const distX = touch.pageX - startX; // Distance moved horizontally
-          const swipeElement = mainItem.querySelector('.slider-item:nth-child(2)')
 
           if (Math.abs(distX) >= threshold) {
             distX > 0 ? prevItem() : nextItem()
           }
 
+          swipeElement.style.transition = `0.7s`
           swipeElement.style.transform = `translateX(0px)`
         }, false);
 
@@ -640,7 +645,6 @@
           }
         })
       });
-
      </script>
   </body>
 </html>
