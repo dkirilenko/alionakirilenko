@@ -557,7 +557,6 @@ section#contacts * {
 }
 
 .contacts-grid-block {
-  /* flex-direction: column; */
   padding: 24px;
 }
 
