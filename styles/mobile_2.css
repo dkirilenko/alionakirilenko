@@ -3,14 +3,34 @@
     display: flex !important;
   }
 
+  section.article-style {
+    padding: 16px;
+    padding-top: 100px;
+  }
+
+  section.article-style .articles-mobile-pre {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  section.article-style .articles-mobile-pre img {
+    width: 100%;
+    padding-bottom: 8px;
+  }
+
+  section.article-style .card {
+    width: 100%;
+  }
+
   #home-content {
     margin-top: 3rem;
   }
-  
+
   #home-content h1 div {
     font-size: 2em;
   }
-  
+
   #home-content h1 span {
     font-size: 1.2rem;
   }
@@ -21,7 +41,7 @@
     margin-bottom: 2rem;
   }
 
-  section:not(#education) {
+  section:not(#education):not(.article-style) {
     padding: 16px;
   }
 
@@ -47,7 +67,7 @@
   .photo-image {
     margin-bottom: 24px;
   }
-  
+
   #google-map {
     margin-top: 1rem;
   }
@@ -73,7 +93,7 @@
     top: 24px;
     right: 24px;
   }
-  
+
   .toggle i {
     font-size: 1.2rem;
   }

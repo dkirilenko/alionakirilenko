@@ -19,7 +19,34 @@
   scrollbar-color: var(--primary-color) transparent;
   font-size: 16px;
   overscroll-behavior: contain;
-  user-select: none;
+  /* user-select: none; */
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gap-24 {
+  gap: 24px
+}
+
+.gap-8 {
+  gap: 8px
 }
 
 img {
@@ -688,4 +715,68 @@ nav a.active {
 
 .toggle i {
   text-shadow: 1px 1px 2px var(--primary-color);
+}
+
+
+/* Articles */
+
+section.article-style {
+  background-color: var(--secondary-color);
+  padding: 100px 10% 24px 10%;
+  gap: 32px;
+  flex-direction: column;
+}
+
+
+.card {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  /* box-shadow: 0 0 0 5px #21283a; */
+}
+
+.card .img {
+  border-radius: var(--border-radius);
+  background-image: var(--background);
+  background-position: center;
+  background-size: cover;
+  aspect-ratio: 4 / 3;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+.card:hover .img {
+  transform: scale(1.03);
+}
+
+.card .date {
+  text-align: right;
+}
+
+.card .title {
+  font-weight: bold;
+}
+
+section.article-style p {
+  text-indent: 16px
+}
+
+/* TMP */
+section.article-style h1 {
+  font-size: 3rem;
+}
+
+section.article-style h2 {
+  font-size: 2.5rem;
+}
+
+section.article-style h3 {
+  font-size: 2rem;
+}
+
+section.article-style h4 {
+  font-size: 1.5rem;
 }

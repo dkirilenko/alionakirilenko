@@ -40,6 +40,7 @@
         <a data-scroll-target-id="home" class="active">Головна</a>
         <a data-scroll-target-id="education">Освіта</a>
         <a data-scroll-target-id="services">Послуги</a>
+        <!-- <a href="/articles">Статті</a> -->
         <a data-scroll-target-id="contacts">Контакти</a>
       </nav>
 
@@ -554,7 +555,7 @@
         }
 
         const sections = document.querySelectorAll("section:not(#gallery)");
-        const navLinks = document.querySelectorAll("nav a");
+        const navLinks = document.querySelectorAll("nav a:not([href])");
         scrollTo(sections, navLinks, window)
 
         // Lasy load images on visit page
@@ -602,7 +603,7 @@
 
         let message;
         try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
-        fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
+        // fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
 
         // *** Swipe effect ***
         let startX, swipeElement;
