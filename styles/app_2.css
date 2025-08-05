@@ -761,7 +761,8 @@ section.article-style {
 }
 
 section.article-style p {
-  text-indent: 16px
+  text-indent: 16px;
+  text-align: justify;
 }
 
 /* TMP */
