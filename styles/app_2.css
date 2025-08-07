@@ -761,9 +761,14 @@ section.article-style {
 }
 
 section.article-style p {
-  text-indent: 16px;
+  text-indent: 24px;
   text-align: justify;
 }
+
+.text-align-justify {
+  text-align: justify;
+}
+
 
 /* TMP */
 section.article-style h1 {
