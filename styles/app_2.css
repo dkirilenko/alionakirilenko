@@ -19,7 +19,7 @@
   scrollbar-color: var(--primary-color) transparent;
   font-size: 16px;
   overscroll-behavior: contain;
-  /* user-select: none; */
+  user-select: none;
 }
 
 .text-right {
@@ -725,8 +725,12 @@ section.article-style {
   padding: 100px 10% 24px 10%;
   gap: 32px;
   flex-direction: column;
+  min-height: unset;
 }
 
+section#articles {
+  flex-direction: row;
+}
 
 .card {
   width: 25%;
