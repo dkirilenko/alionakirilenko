@@ -19,7 +19,7 @@
   scrollbar-color: var(--primary-color) transparent;
   font-size: 16px;
   overscroll-behavior: contain;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .text-right {
@@ -33,6 +33,10 @@
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .flex-center {
@@ -106,10 +110,6 @@ section {
 
 .for-mobile {
   display: none;
-}
-
-.text-center {
-  text-align: center;
 }
 
 /* Home */
@@ -726,6 +726,8 @@ section.article-style {
   gap: 32px;
   flex-direction: column;
   min-height: unset;
+  counter-reset: footnotes footnote-elements;
+  padding-bottom: 5rem;
 }
 
 section#articles {
@@ -790,3 +792,27 @@ section.article-style h3 {
 section.article-style h4 {
   font-size: 1.5rem;
 }
+
+/* Footnote links in text */
+.footnote-item {
+  counter-increment: footnotes;
+  text-decoration: none;
+}
+
+.footnote-item:after {
+  content: "[" counter(footnotes) "]";
+  vertical-align: super;
+  font-size: 60%;
+  margin-left: .1em;
+}
+
+.footnote-element {
+  counter-increment: footnote-elements;
+}
+
+.footnote-element:before {
+  content: "[" counter(footnote-elements) "] ";
+  vertical-align: super;
+  font-size: 60%;
+}
+/* Footnote links in text */
