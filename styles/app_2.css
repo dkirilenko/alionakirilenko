@@ -732,10 +732,14 @@ section.article-style {
 
 section#articles {
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .card {
-  width: 25%;
+  width: calc(25% - 24px);
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 8px;
