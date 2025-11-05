@@ -820,3 +820,8 @@ section.article-style h4 {
   font-size: 60%;
 }
 /* Footnote links in text */
+
+section.article-style .articles-mobile-pre img {
+  max-width: 600px;
+  max-height: 350px;
+}

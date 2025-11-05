@@ -25,6 +25,8 @@
   section.article-style .articles-mobile-pre img {
     width: 100%;
     padding-bottom: 8px;
+    max-width: none;
+    max-height: none;
   }
 
   section.article-style .card {
