@@ -1,0 +1,27 @@
+<section class="article-style">
+  <div class="article-title">
+    <h2>
+      <%= @article.title %>
+    </h2>
+  </div>
+
+  <div>авторка: Кириленко Альона</div>
+
+  <div class="flex-center gap-24 articles-mobile-pre">
+    <%= image_tag @article.image %>
+  </div>
+
+  <div class="flex-column gap-8" style="text-indent: 24px;">
+    <%= @article.content %>
+  </div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      // Show/Hide mobile menu on bar/cross click
+      document.querySelectorAll('.toggle i').forEach((el) => {
+        el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
+      })
+    })
+  </script>
+</section>

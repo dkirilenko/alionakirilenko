@@ -1,0 +1,31 @@
+<% selected_navbar_item = @selected_navbar_item || "home" %>
+
+<header class="<%= 'dark-navbar' if @dark_navbar %>">
+  <div id="logo">
+    <%= image_tag "v2/logo.png" %>
+  </div>
+
+  <%# TODO: Rewrite %>
+  <% if selected_navbar_item == 'articles' %>
+    <nav>
+      <a href="/">Головна</a>
+      <a href="/#education">Освіта</a>
+      <a href="/#services">Послуги</a>
+      <a href="/articles" class="active">Статті</a>
+      <a href="/#contacts">Контакти</a>
+    </nav>
+  <% else %>
+    <nav>
+      <a data-scroll-target-id="home" class="active">Головна</a>
+      <a data-scroll-target-id="education">Освіта</a>
+      <a data-scroll-target-id="services">Послуги</a>
+      <a href="/articles">Статті</a>
+      <a data-scroll-target-id="contacts">Контакти</a>
+    </nav>
+  <% end %>
+
+  <div class="toggle for-mobile">
+    <i class="fa-solid fa-bars secondary-color"></i>
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+</header>

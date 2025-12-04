@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Кириленко Альона | Психотерапевт | Черкаси" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%# <meta name="apple-mobile-web-app-capable" content="yes"> %>
+    <%# <meta name="application-name" content="Alionakirilenko"> %>
+    <%# <meta name="mobile-web-app-capable" content="yes"> %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Кириленко Альона | Психотерапевт | Черкаси",
+        "url": "https://alionakirilenko.com",
+        "image": "https://alionakirilenko.com/images/v2/profile.jpg",
+        "description": "Кириленко Альона - психотерапевт у місті Черкаси. Надаю психологічні послуги: психоаналітична психотерапія дорослих та дітей у місті Черкаси та онлайн"
+      }
+    </script>
+
+    <meta property="og:title" content="Кириленко Альона | Психотерапевт | Черкаси" />
+    <meta property="og:description" content="Кириленко Альона - психотерапевт у місті Черкаси. Надаю психологічні послуги: психоаналітична психотерапія дорослих та дітей у місті Черкаси та онлайн" />
+    <meta property="og:image" content="https://alionakirilenko.com/images/v2/profile.jpg" />
+    <meta property="og:url" content="https://alionakirilenko.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="description" content="Кириленко Альона - психотерапевт у місті Черкаси. Надаю психологічні послуги: психоаналітична психотерапія дорослих та дітей у місті Черкаси та онлайн">
+
+
+    <script src="https://kit.fontawesome.com/ee8d3174b1.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  </head>
+
+  <body>
+    <%= render 'shared/header' %>
+
+    <%= yield %>
+
+    <%= content_for :javascript %>
+  </body>
+</html>

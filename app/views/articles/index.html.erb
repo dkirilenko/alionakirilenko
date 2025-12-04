@@ -1,0 +1,20 @@
+<section id="articles" class="article-style">
+  <% @articles.each do |article| %>
+    <%= link_to article_path(article.slug), class: "card" do %>
+      <div class="img" style="--background: url('<%= url_for(article.image) %>')"></div>
+      <div class="date"><%= l(article.published_at.to_date, format: :long) %></div>
+      <div class="title"><%= article.title %></div>
+    <% end %>
+  <% end %>
+</section>
+
+<% content_for :javascript do %>
+  <script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+      // Show/Hide mobile menu on bar/cross click
+      document.querySelectorAll('.toggle i').forEach((el) => {
+        el.addEventListener('click', () => document.querySelector('header').classList.toggle('active'))
+      })
+    })
+  </script>
+<% end %>

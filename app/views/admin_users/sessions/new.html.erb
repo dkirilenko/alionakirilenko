@@ -1,0 +1,22 @@
+<h2 style="font-size: 20px; margin-bottom: 20px; text-align: center;">
+  Sign In to Admin Panel
+</h2>
+
+<%= form_with model: resource, url: session_path(resource_name), local: true do |f| %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, autocomplete: "current-password" %>
+
+  <% if devise_mapping.rememberable? %>
+    <div style="margin-bottom: 16px;">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <button type="submit">Sign In</button>
+
+<% end %>
