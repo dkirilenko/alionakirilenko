@@ -55,6 +55,14 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+
+  # Deploy
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
+  gem 'capistrano-copy-files'
 end
 
 group :development do

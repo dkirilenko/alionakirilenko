@@ -1,0 +1,17 @@
+[Unit]
+Description=Test Puma HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/apps/alionakirilenko/current
+ExecStart=/bin/bash -lc 'RAILS_ENV=staging bundle exec puma -C /home/ubuntu/apps/alionakirilenko/current/config/puma.rb'
+ExecStop=/bin/bash -lc 'bundle exec pumactl -S /home/ubuntu/apps/alionakirilenko/tmp/pids/puma.pid stop'
+
+PIDFile=/home/ubuntu/apps/alionakirilenko/shared/tmp/pids/puma.pid
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

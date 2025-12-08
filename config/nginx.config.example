@@ -1,0 +1,27 @@
+upstream app {
+  # Path to Puma SOCK file, as defined previously
+  server 127.0.0.1:3000;
+}
+
+server {
+  listen 80;
+  server_name alionakirilenko.com;
+
+  root /home/ubuntu/apps/alionakirilenko/current/public;
+
+  location @app {
+    proxy_pass http://app;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+  }
+
+  location @puma {
+      proxy_pass http://unix:/var/www/myapp/shared/tmp/sockets/puma.sock;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+  }
+
+  client_max_body_size 10M;
+  error_page 500 502 503 504 /500.html;
+}
