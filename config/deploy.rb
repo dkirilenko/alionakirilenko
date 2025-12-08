@@ -30,7 +30,7 @@ set :bundle_flags, '--deployment'
 
 append :linked_files, "config/master.key", "db/production.sqlite3"
 
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "storage"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "storage", "public/assets"
 
 task :restart_services do
   on roles(:web) do

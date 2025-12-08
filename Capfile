@@ -17,7 +17,7 @@ require 'capistrano/rvm'
 # require 'capistrano/yarn'
 # require 'capistrano/puma'
 require 'capistrano/copy_files'
-# require 'capistrano/rails/assets'
+require 'capistrano/rails/assets'
 
 # install_plugin Capistrano::Puma
 # install_plugin Capistrano::Puma::Workers
