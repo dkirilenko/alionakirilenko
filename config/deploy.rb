@@ -25,6 +25,9 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true # Change to false when not using ActiveRecord
 set :keep_releases, 2 # Releases count
 
+set :bundle_path, -> { shared_path.join('bundle') }
+set :bundle_flags, '--deployment'
+
 append :linked_files, "config/master.key", "db/production.sqlite3"
 
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "storage"
