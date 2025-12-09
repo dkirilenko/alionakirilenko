@@ -66,11 +66,16 @@
 <section id="gallery">
   <div id="gallery-back-button">Повернутися</div>
   <div id="slider">
-    <% Certificate.ordered.all.each_with_index do |certificate, index| %>
-      <% if index < 3 %>
-        <div class="slider-item" data-elid="<%= index %>"><img class='loaded' src="<%= url_for(certificate.image) %>" /></div>
-      <% else %>
-        <div class="slider-item" data-elid="<%= index %>"><img data-src="<%= url_for(certificate.image) %>" /></div>
+    <% certificates = Certificate.ordered.all %>
+    <% if certificates.any? %>
+      <div class="slider-item" data-elid="<%= certificates.count %>"><img data-src="<%= url_for(certificates.last.image) %>" /></div>
+
+      <% certificates[0..-2].each_with_index do |certificate, index| %>
+        <% if index < 3 %>
+          <div class="slider-item" data-elid="<%= index %>"><img class='loaded' src="<%= url_for(certificate.image) %>" /></div>
+        <% else %>
+          <div class="slider-item" data-elid="<%= index %>"><img data-src="<%= url_for(certificate.image) %>" /></div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
