@@ -8,19 +8,19 @@
   <%# TODO: Rewrite %>
   <% if selected_navbar_item == 'articles' %>
     <nav>
-      <a href="/">Головна</a>
-      <a href="/#education">Освіта</a>
-      <a href="/#services">Послуги</a>
-      <a href="/articles" class="active">Статті</a>
-      <a href="/#contacts">Контакти</a>
+      <a href="/"><div>Головна</div></a>
+      <a href="/#education"><div>Освіта</div></a>
+      <a href="/#services"><div>Послуги</div></a>
+      <a href="/articles" class="active"><div>Статті</div></a>
+      <a href="/#contacts"><div>Контакти</div></a>
     </nav>
   <% else %>
     <nav>
-      <a data-scroll-target-id="home" class="active">Головна</a>
-      <a data-scroll-target-id="education">Освіта</a>
-      <a data-scroll-target-id="services">Послуги</a>
-      <a href="/articles">Статті</a>
-      <a data-scroll-target-id="contacts">Контакти</a>
+      <a data-scroll-target-id="home" class="active"><div>Головна</div></a>
+      <a data-scroll-target-id="education"><div>Освіта</div></a>
+      <a data-scroll-target-id="services"><div>Послуги</div></a>
+      <a href="/articles"><div>Статті</div></a>
+      <a data-scroll-target-id="contacts"><div>Контакти</div></a>
     </nav>
   <% end %>
 

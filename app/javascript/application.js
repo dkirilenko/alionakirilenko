@@ -208,7 +208,7 @@
         e.preventDefault()
 
         container.scrollTo({ top: elements[index].offsetTop, behavior: "smooth" });
-        setActive(link)
+        // setActive(link)
       })
     })
 
