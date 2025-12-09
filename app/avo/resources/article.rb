@@ -9,6 +9,7 @@ class Avo::Resources::Article < Avo::BaseResource
     field :id, as: :id
     field :slug, as: :text
     field :title, as: :text
+    field :intro, as: :text
     field :content, as: :trix
     field :published_at, as: :date_time
     field :published, as: :boolean

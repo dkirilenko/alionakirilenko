@@ -9,6 +9,11 @@
 
   <div class="flex-center gap-24 articles-mobile-pre">
     <%= image_tag @article.image %>
+    <% if @article.intro.present? %>
+      <div style="max-width: 400px" class="text-align-justify">
+        <i><%= @article.intro %></i>
+      </div>
+    <% end %>
   </div>
 
   <div class="flex-column gap-8" style="text-indent: 24px;">
