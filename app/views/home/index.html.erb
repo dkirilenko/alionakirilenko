@@ -11,84 +11,95 @@
 </section>
 
 <section id="education">
-  <div class="education-grid-block">
-    <div class="education-separator line"></div>
-    <div class="education-card-wrapper slide-left-to-right-wrapper">
-      <div class="education-card">
-        <div class="education-separator circle"></div>
-        <div class="education-card-title">
-          Освіта
-        </div>
-        <div class="education-card-content">
-          <ul>
-            <li lang="uk">Закінчила магістратуру університету Кот-дʼАзюр (Ніцца, Франція)</li>
-            <li lang="uk">Закінчила Міжнародний Інститут Глибинної Психології (Київ, Україна)</li>
-            <li lang="uk">Член Української Асоціації Психоаналізу</li>
-            <li lang="uk">Член міжнародної асоціації La Cause des bébés</li>
-            <li lang="uk">Учасниця проекту “ДІЯ СЛОВА” , який створений Міжнародним інститутом глибинної психології спільно з Міжнародною Федерацією Психоаналізу та Українською Асоціацією Психоаналізу</li>
-            <li lang="uk">Проходжу тренінговий аналіз (особиста терапія) у сертифікованого спеціаліста та тренінгового психоаналітика УАП-ЄКПП Україна (більше 300 годин, який триває)</li>
-            <li lang="uk">Регулярні індивідуальні та групові супервізії</li>
-          </ul>
-        </div>
+  <div class="education-block">
+    <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+    <div class="title">Магістр гуманітарних і соціальних наук з психології</div>
+    <div class="description">
+      Закінчила магістратуру університету Кот-дʼАзюр (Ніцца, Франція), спеціальність - практична психологія, спеціалізація - Клінічна психологія і терапевтична медіація за допомогою мистецтва.
+    </div>
+    <div class="flex-center gap-24" style="margin-top: auto;">
+      <img src="<%= asset_path('magistre_diplom.webp') %>" alt="Diploma France" />
+      <img src="<%= asset_path('master_diplom.webp') %>" alt="Diploma France" />
+    </div>
+  </div>
+
+  <div class="education-block">
+    <div class="icon"><i class="fa-solid fa-brain"></i></div>
+    <div class="title">Психоаналітична підготовка</div>
+    <div class="description">
+      Закінчила Міжнародний інститут глибинної психології (Київ, Україна), спеціальність - практична психологія, спеціалізація - психоаналіз.
+    </div>
+    <div class="flex-center gap-24" style="margin-top: auto;">
+      <img src="<%= asset_path('diplom.jpg') %>" alt="Diploma France" />
+      <img src="<%= asset_path('diplom_dodatok.jpg') %>" alt="Diploma France" />
+    </div>
+  </div>
+  <div class="education-block">
+    <div class="icon"><i class="fa-regular fa-circle-check"></i></div>
+    <div class="title">Спеціалізації</div>
+    <div class="description">
+      <ul>
+        <li>Спеціалізація з клінічного психоаналізу "Психоаналітична робота з не-невротичними пацієнтами" (128 годин)</li>
+        <li>Клінічна спеціалізація «Психоаналітичні стратегії в психотерапії дітей та підлітків. Психічні наслідки війни для юного субʼєкту» (128 годин)</li>
+      </ul>
+    </div>
+
+    <div class="flex-center gap-24" style="margin-top: auto;">
+      <img src="<%= asset_path('certificate.jpg') %>" alt="Diploma France" />
+      <img src="<%= asset_path('certificate_d.webp') %>" alt="Diploma France" />
+    </div>
+  </div>
+
+  <div class="education-block">
+    <div class="title">Членство в професійних асоціаціях.</div>
+    <div class="description">
+      Я являюсь членом Української Асоціації Психоаналізу, а також членом міжнародної асоціації La Cause des bébés. 
+    </div>
+  </div>
+
+  <div class="education-block">
+    <div class="title">Особистий психоаналіз</div>
+    <div class="description">
+      Проходжу тренінговий аналіз (особистий психоаналіз) у сертифікованого спеціаліста та тренінгового психоаналітика УАП-ЄКПП Україна (більше 300 годин, який триває).
+    </div>
+  </div>
+
+  <div class="education-block">
+    <div class="title">Супервізійна підтримкаї</div>
+    <div class="description">
+      Маю регулярні індивідуальні та групові супервізії. 
+    </div>
+  </div>
+
+</section>
+<div id="gallery">
+
+  <div class="cert-slider">
+    <h2 class="cert-title">Дипломи та сертифікати</h2>
+    <p class="cert-subtitle">
+      Постійно підвищую свою кваліфікацію, приймаю участь в семінарах, міжнародних конференціях та форумах
+    </p>
+
+    <div class="slider-viewport">
+      <div class="slider-track">
+        <% Certificate.ordered.all.each_with_index do |certificate, index| %>
+            <div class="slide"><img src="<%= url_for(certificate.image) %>" /></div>
+          <% end %>
       </div>
     </div>
+
+    <div class="pagination"></div>
   </div>
+</div>
 
-  <div class="education-grid-block">
-    <div class="education-separator line secondary"></div>
+<div class="cert-modal" id="certModal">
+  <div class="cert-modal-backdrop"></div>
 
-    <div class="education-card-wrapper slide-right-to-left-wrapper">
-      <div class="education-card">
-        <div class="education-separator circle secondary"></div>
-
-        <div class="education-card-title">
-          Спеціалізації
-        </div>
-        <div class="education-card-content">
-          <ul>
-            <li lang="uk">Спеціалізація з клінічного психоаналізу “Психоаналітична робота з не-невротичними пацієнтами” (128 годин)</li>
-            <li lang="uk">Клінічна спеціалізація «Психоаналітичні стратегії в психотерапії дітей та підлітків. Психічні наслідки війни для юного суб'єкту» (128 годин)</li>
-            <li lang="uk">Курс “Організація психоаналітичної практики в сучасних умовах” (20 годин)</li>
-            <li lang="uk">Курс “Терапія партнера нарцисичного перверта” (10 годин)</li>
-            <li lang="uk">Клінічний семінар “Демони печалі: меланхолія та депресія як психічні розлади і феномени. Психоаналітичний погляд” (8 годин)</li>
-            <li lang="uk">Міжнародна психоаналітична конференція “Неосексуальність: норма і патологія”</li>
-            <li lang="uk">Всеукраїнський клінічно-практичний симпозіум “Виклики псиспеціалістам в процесі роботи з онкохворими” (12 годин)</li>
-            <li lang="uk">Семінар-практикум “Перенесення: пристрасть і ненависть в аналітичному просторі”</li>
-            <li lang="uk">Практично-теоретичний семінар: “Інша реальність. Психотична структура і можливості психоаналізу” (10 годин)</li>
-          </ul>
-        </div>
-        <div id="show-gallery" class="btn">Більше</div>
-      </div>
-    </div>
+  <div class="cert-modal-content">
+    <img id="certModalImage" alt="Certificate preview" />
   </div>
-</section>
+</div>
 
-<section id="gallery">
-  <div id="gallery-back-button">Повернутися</div>
-  <div id="slider">
-    <% certificates = Certificate.ordered.all %>
-    <% if certificates.any? %>
-      <div class="slider-item" data-elid="<%= certificates.count %>"><img data-src="<%= url_for(certificates.last.image) %>" /></div>
-
-      <% certificates[0..-2].each_with_index do |certificate, index| %>
-        <% if index < 3 %>
-          <div class="slider-item" data-elid="<%= index %>"><img class='loaded' src="<%= url_for(certificate.image) %>" /></div>
-        <% else %>
-          <div class="slider-item" data-elid="<%= index %>"><img data-src="<%= url_for(certificate.image) %>" /></div>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
-  <div id="slider-controls">
-    <div class="slider-per-page">
-
-    </div>
-    <div class="slider-buttons">
-      <div class="slider-button left"></div>
-      <div class="slider-button right"></div>
-    </div>
-  </div>
-</section>
 
 <section id="services">
   <div class="services-separator line"></div>

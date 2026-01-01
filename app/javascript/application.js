@@ -1,6 +1,7 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 // import "@hotwired/turbo-rails"
 // import "controllers"
+import "slider"
 
 
  document.addEventListener("DOMContentLoaded", (event) => {
@@ -261,16 +262,11 @@
     })
   }
 
-  const gallery = document.getElementById('gallery');
-  document.getElementById('show-gallery').addEventListener('click', () => {
-    gallery.classList.toggle('active');
-    document.querySelector('body').classList.add('no-scroll')
-    lazyLoadGallery()
-  })
-  document.getElementById('gallery-back-button').addEventListener('click', () => {
-    gallery.classList.toggle('active');
-    document.querySelector('body').classList.remove('no-scroll')
-  })
+  // document.getElementById('show-gallery').addEventListener('click', () => {
+  //   gallery.classList.toggle('active');
+  //   document.querySelector('body').classList.add('no-scroll')
+  //   lazyLoadGallery()
+  // })
 
   // Show/Hide mobile menu on bar/cross click
   document.querySelectorAll('.toggle i').forEach((el) => {
@@ -285,74 +281,82 @@
   }
 
 
-  const perPageContainer = document.querySelector('.slider-per-page')
-  document.querySelectorAll('.slider-item').forEach((el, index) => {
-    const perPageElement = document.createElement('div');
-    perPageElement.classList.add('slider-per-page-item')
-    perPageElement.dataset.elid = el.dataset.elid
-    perPageContainer.append(perPageElement)
-  })
-  refreshPerPage(document.querySelectorAll('.slider-item')[0].dataset.elid)
+  // const perPageContainer = document.querySelector('.slider-per-page')
+  // document.querySelectorAll('.slider-item').forEach((el, index) => {
+  //   const perPageElement = document.createElement('div');
+  //   perPageElement.classList.add('slider-per-page-item')
+  //   perPageElement.dataset.elid = el.dataset.elid
+  //   perPageContainer.append(perPageElement)
+  // })
+  // refreshPerPage(document.querySelectorAll('.slider-item')[0].dataset.elid)
 
   let message;
   try { message = `Somebody visited alionakirilenko site! -- ${navigator?.userAgent}\n\n${JSON.stringify(navigator?.userAgentData)}` } catch { message = `Somebody visited site!` }
   // fetch(`https://api.telegram.org/bot${atob('MTE5NTY0MDIyODpBQUhsR3lxOVBqTjU0LVhsVjM3UzBubkp2cGxlcmlMczNuNA==')}/sendMessage`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({chat_id: '676561081', text: message})})
 
   // *** Swipe effect ***
-  let startX, swipeElement;
+  // let startX, swipeElement;
 
-  const threshold = 100; // Minimum swipe distance in pixels
-  const mainItem = document.getElementById('slider')
+  // const threshold = 100; // Minimum swipe distance in pixels
+  // const mainItem = document.getElementById('slider')
 
   // Helper function to handle swipe to left (move to next item)
-  const nextItem = () => {
-    const sliders = document.querySelectorAll('.slider-item')
-    refreshPerPage(sliders[1].dataset.elid)
-    mainItem.appendChild(sliders[0])
-  };
+  // const nextItem = () => {
+  //   const sliders = document.querySelectorAll('.slider-item')
+  //   refreshPerPage(sliders[1].dataset.elid)
+  //   mainItem.appendChild(sliders[0])
+  // };
 
-  // Helper function to handle swipe to right (move to previous item)
-  const prevItem = () => {
-    const sliders = document.querySelectorAll('.slider-item')
-    mainItem.prepend(sliders[sliders.length - 1])
-    refreshPerPage(sliders[sliders.length - 1].dataset.elid)
-  };
+  // // Helper function to handle swipe to right (move to previous item)
+  // const prevItem = () => {
+  //   const sliders = document.querySelectorAll('.slider-item')
+  //   mainItem.prepend(sliders[sliders.length - 1])
+  //   refreshPerPage(sliders[sliders.length - 1].dataset.elid)
+  // };
 
   // Add touch event listeners
-  mainItem.addEventListener('touchstart', (e) => {
-    const touch = e.changedTouches[0];
-    startX = touch.pageX;
-    currentSwipeElement = e.target;
-    swipeElement = mainItem.querySelector('.slider-item:nth-child(2)')
-    swipeElement.style.transition = `0.7s, transform 0s`
-  }, false);
+  // mainItem.addEventListener('touchstart', (e) => {
+  //   const touch = e.changedTouches[0];
+  //   startX = touch.pageX;
+  //   currentSwipeElement = e.target;
+  //   swipeElement = mainItem.querySelector('.slider-item:nth-child(2)')
+  //   swipeElement.style.transition = `0.7s, transform 0s`
+  // }, false);
 
-  mainItem.addEventListener("touchmove", (e) => {
-    const touch = e.changedTouches[0];
-    swipeElement.style.transform = `translateX(${touch.pageX - startX}px)`
-  });
+  // mainItem.addEventListener("touchmove", (e) => {
+  //   const touch = e.changedTouches[0];
+  //   swipeElement.style.transform = `translateX(${touch.pageX - startX}px)`
+  // });
 
-  mainItem.addEventListener('touchend', (e) => {
-    const touch = e.changedTouches[0];
-    const distX = touch.pageX - startX; // Distance moved horizontally
+  // mainItem.addEventListener('touchend', (e) => {
+  //   const touch = e.changedTouches[0];
+  //   const distX = touch.pageX - startX; // Distance moved horizontally
 
-    if (Math.abs(distX) >= threshold) {
-      distX > 0 ? prevItem() : nextItem()
-    }
+  //   if (Math.abs(distX) >= threshold) {
+  //     distX > 0 ? prevItem() : nextItem()
+  //   }
 
-    swipeElement.style.transition = `0.7s`
-    swipeElement.style.transform = `translateX(0px)`
-  }, false);
+  //   swipeElement.style.transition = `0.7s`
+  //   swipeElement.style.transform = `translateX(0px)`
+  // }, false);
 
-  document.querySelector('.slider-button.right').addEventListener('click', nextItem)
-  document.querySelector('.slider-button.left').addEventListener('click', prevItem)
+  // document.querySelector('body').addEventListener('keydown', (e) => {
+  //   if (document.getElementById('gallery').classList.contains('active')) {
+  //     if (e.key == 'ArrowRight') { nextItem() }
+  //     if (e.key == 'ArrowLeft') { prevItem() }
+  //   }
+  // })
 
-  document.querySelector('body').addEventListener('keydown', (e) => {
-    if (document.getElementById('gallery').classList.contains('active')) {
-      if (e.key == 'ArrowRight') { nextItem() }
-      if (e.key == 'ArrowLeft') { prevItem() }
-    }
-  })
+
+
+
+
+
+
+
+
+
+
 });
 
 import "trix"

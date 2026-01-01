@@ -59,7 +59,7 @@
     flex-direction: column;
   }
 
-  .education-grid-block, .services-grid-block, .contacts-grid-block {
+  .services-grid-block, .contacts-grid-block {
     width: 100%;
     padding: 0 !important;
     margin: 0;

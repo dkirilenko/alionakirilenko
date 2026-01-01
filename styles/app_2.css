@@ -253,37 +253,6 @@ ul li {
   hyphens: auto;
 }
 
-/* Separator */
-.education-separator {
-  position: absolute;
-  top: 40%;
-  right: -16px;
-}
-
-.circle {
-  width: 35px;
-  height: 35px;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-}
-
-.education-separator.line {
-  background-color: var(--primary-color);
-  height: 6px;
-  top: calc(40% + 23px);
-  right: 0;
-}
-
-.education-separator.circle.secondary {
-  background-color: var(--secondary-color);
-  left: -16px;
-}
-
-.education-separator.line.secondary {
-  background-color: var(--secondary-color);
-  left: 0;
-}
-
 /* gallery */
 
 section#gallery {
