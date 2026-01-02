@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let isDragging = false;
   let startX = 0;
   let lastX = 0;
+  let isVisible = false;
+  let animationId = null;
 
   // Duplicate slides for infinite loop
   slides.forEach(slide => {
@@ -50,25 +52,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const dots = document.querySelectorAll('.pagination-dot');
 
   // Drag handling
-  viewport.addEventListener('mousedown', e => {
+  const mouseDownFn = (e) => {
     isDragging = true;
-    startX = e.pageX;
-    lastX = e.pageX;
+    const pageX = e.pageX || e.touches[0].pageX;
+    startX = pageX;
+    lastX = pageX;
     velocity = 0;
     dragTimer = Date.now();
 
-    console.log('MOUSEDOWN');
-  });
+    console.log('DOWNMOUSE');
 
-  viewport.addEventListener('mousemove', e => {
+  }
+
+  viewport.addEventListener('mousedown', mouseDownFn)
+  viewport.addEventListener('touchstart', mouseDownFn)
+
+
+  const mouseMoveFn = (e) => {
     if (!isDragging) return;
-    const delta = e.pageX - lastX;
+
+    const pageX = e.pageX || e.touches[0].pageX;
+    const delta = pageX - lastX;
+    console.log('delta', delta);
     position -= delta;
-    lastX = e.pageX;
+    lastX = pageX;
     prevVelocity = velocity;
 
-    console.log('MOVEMOVE');
-  });
+    console.log('MOVEMOUSE');
+  }
+
+  viewport.addEventListener('mousemove', mouseMoveFn);
+  viewport.addEventListener('touchmove', mouseMoveFn);
+
+  const mouseUpFn = (e) => {
+    if (Date.now() - dragTimer < openModalTimeout) {
+      const slide = e.target.closest('.slide img');
+      if (!slide) return;
+
+      openModal(slide.src);
+    } else {
+      velocity = 1 //(startX - (e.pageX || e.changedTouches[0].pageX)) * 0.02;
+    }
+
+    console.log('UPMOUSE');
+    if (!isDragging) return;
+
+    isDragging = false;
+  }
+
+  viewport.addEventListener('mouseup', mouseUpFn);
+  viewport.addEventListener('touchend', mouseUpFn);
+
 
   function openModal(src) {
     modalImg.src = src;
@@ -76,20 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('modal-open');
   }
 
-  viewport.addEventListener('mouseup', e => {
-    if (Date.now() - dragTimer < openModalTimeout) {
-      const slide = e.target.closest('.slide img');
-      if (!slide) return;
 
-      openModal(slide.src);
-    } else {
-      velocity = 1 //(startX - e.pageX) * 0.02;
-    }
-
-    console.log('UPMOUSE');
-    if (!isDragging) return;
-    isDragging = false;
-  });
 
   // Animation loop
   function animate() {
@@ -108,11 +129,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const activeIndex = Math.round(position / slideWidth) % slides.length;
     dots.forEach((d, i) => d.classList.toggle('active', i === activeIndex));
 
-    requestAnimationFrame(animate);
+    animationId = requestAnimationFrame(animate);
   }
 
-  animate();
+  function startAnimation() {
+    if (!animationId) {
+      animationId = requestAnimationFrame(animate);
+    }
+  }
 
+  function stopAnimation() {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+  }
 
   function closeModal() {
     modal.classList.remove('active');
@@ -123,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   backdrop.addEventListener('click', closeModal);
   modalContent.addEventListener('click', closeModal);
+  document.querySelector('.close-modal-icon').addEventListener('click', closeModal);
 
   window.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
@@ -133,6 +165,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.education-block img').forEach(img => {
     img.addEventListener('click', () => { openModal(img.src); });
   })
+
+
+
+  const sliderSection = document.querySelector('.cert-slider');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      isVisible = entry.isIntersecting;
+      if (isVisible) startAnimation();
+      else stopAnimation();
+    },
+    {
+      threshold: 0.25 // start when 25% of slider is visible
+    }
+  );
+
+  observer.observe(sliderSection);
 
 
 });
