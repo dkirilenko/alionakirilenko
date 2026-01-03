@@ -330,7 +330,7 @@ ul li {
   display: flex;
   gap: 32px;
   will-change: transform;
-  transition: transform .1s ease-out;
+  transition: transform .5s ease-out;
 }
 
 .slide {
